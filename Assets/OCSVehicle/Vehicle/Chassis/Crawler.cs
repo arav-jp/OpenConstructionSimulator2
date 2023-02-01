@@ -7,6 +7,8 @@ public class Crawler : Chassis
     #region Objects
     [Header("Objects")]
     [SerializeField]
+    private Rigidbody _rb;
+    [SerializeField]
     private CrawlerUnit _unitL;
     [SerializeField]
     private CrawlerUnit _unitR;
@@ -15,6 +17,12 @@ public class Crawler : Chassis
     #region Parameters
     [SerializeField]
     private float _maxTorque = 1.0f;
+
+    [SerializeField]
+    private float _maxVelocity = 1.0f;
+    private float _maxVelocity2;
+    [SerializeField]
+    private float _maxAngularVelocity = 1.0f;
     #endregion
 
     private void Awake()
@@ -24,11 +32,18 @@ public class Crawler : Chassis
 
     private void Start()
     {
-        
+        _rb.maxDepenetrationVelocity = _maxVelocity;
+        _rb.maxAngularVelocity = _maxAngularVelocity;
+
+        _maxVelocity2 = _maxVelocity * _maxVelocity;
     }
 
     public override void Update()
     {
+        if(_rb.velocity.sqrMagnitude > _maxVelocity2)
+        {
+            _rb.velocity = _rb.velocity.normalized * _maxVelocity;
+        }
         base.Update();
     }
 
