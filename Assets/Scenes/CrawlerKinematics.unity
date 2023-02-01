@@ -215,9 +215,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _use_inspectorInput: 0
   _inspectorInput: []
+  _rb: {fileID: 1479494784}
   _unitL: {fileID: 1132427676}
   _unitR: {fileID: 1484042656}
-  _maxTorque: 1
+  _maxTorque: 10
+  _maxVelocity: 1
+  _maxAngularVelocity: 0.5
 --- !u!4 &230818563
 Transform:
   m_ObjectHideFlags: 0
