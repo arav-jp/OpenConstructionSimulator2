@@ -17,6 +17,8 @@ public class Crawler : Chassis
     #region Parameters
     [SerializeField]
     private float _maxTorque = 1.0f;
+    [SerializeField]
+    private float _brakeTorque = 1.0f;
 
     [SerializeField]
     private float _maxVelocity = 1.0f;
@@ -54,6 +56,8 @@ public class Crawler : Chassis
             return;
         }
         _unitL.UpdateTorque(Mathf.Clamp(inputValues[0], -1.0f, 1.0f)*_maxTorque);
+        _unitL.UpdateBrakeTorque(Mathf.Abs(inputValues[0]) < 0.01f ? _brakeTorque : 0.0f);
         _unitR.UpdateTorque(Mathf.Clamp(inputValues[1], -1.0f, 1.0f)*_maxTorque);
+        _unitR.UpdateBrakeTorque(Mathf.Abs(inputValues[1]) < 0.01f ? _brakeTorque : 0.0f);
     }
 }

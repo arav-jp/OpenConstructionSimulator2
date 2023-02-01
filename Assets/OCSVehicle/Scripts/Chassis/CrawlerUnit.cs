@@ -68,4 +68,12 @@ public class CrawlerUnit : MonoBehaviour
             wc.motorTorque = torque;
         }
     }
+
+    public void UpdateBrakeTorque(float torque)
+    {
+        foreach (WheelCollider wc in _wheelColliders)
+        {
+            wc.brakeTorque = torque;
+        }
+    }
 }
