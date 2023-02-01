@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &166180285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166180286}
+  m_Layer: 0
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166180286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166180285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1479494783}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214199033
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +249,7 @@ MonoBehaviour:
   _unitL: {fileID: 1132427676}
   _unitR: {fileID: 1484042656}
   _maxTorque: 10
+  _brakeTorque: 100
   _maxVelocity: 1
   _maxAngularVelocity: 0.5
 --- !u!4 &230818563
@@ -561,10 +592,10 @@ WheelCollider:
     m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.1
+    m_ExtremumSlip: 0.001
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.1
+    m_AsymptoteSlip: 0.001
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &824188885
@@ -1246,6 +1277,7 @@ GameObject:
   - component: {fileID: 1479494785}
   - component: {fileID: 1479494786}
   - component: {fileID: 1479494782}
+  - component: {fileID: 1479494787}
   m_Layer: 0
   m_Name: TestVehicle
   m_TagString: Untagged
@@ -1278,6 +1310,7 @@ Transform:
   m_Children:
   - {fileID: 230818563}
   - {fileID: 484516993}
+  - {fileID: 166180286}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1325,6 +1358,21 @@ MonoBehaviour:
   _controller: {fileID: 1479494782}
   _chassis: {fileID: 230818562}
   _equipments: []
+--- !u!114 &1479494787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479494781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244c3c00847565c4c8a6568c177a4686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 1479494784}
+  _centerOfMass: {x: 0, y: 0, z: 0}
+  _centerOfMassObj: {fileID: 166180286}
 --- !u!1 &1484042654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,10 +1789,10 @@ WheelCollider:
     m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.1
+    m_ExtremumSlip: 0.001
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.1
+    m_AsymptoteSlip: 0.001
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &94646909314190781
