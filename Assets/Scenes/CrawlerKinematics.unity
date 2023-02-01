@@ -410,7 +410,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _use_inspectorInput: 0
   _inspectorInput: []
-  lights: []
+  lights:
+  - {fileID: 955512359}
 --- !u!1 &553536080
 GameObject:
   m_ObjectHideFlags: 0
