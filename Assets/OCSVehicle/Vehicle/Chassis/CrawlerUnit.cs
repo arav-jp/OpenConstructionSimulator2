@@ -54,7 +54,7 @@ public class CrawlerUnit : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 #if UNITY_EDITOR
         if (_useInspectorInput) UpdateTorque(_inspectorInput*_inspectorInputMagnitude);
