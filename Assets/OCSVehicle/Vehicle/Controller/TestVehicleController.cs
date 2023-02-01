@@ -11,7 +11,18 @@ public class TestVehicleController : VehicleController
     
     private void Update()
     {
-        _inputValues[0] = 1.0f;
-        _inputValues[1] = 1.0f;
+        if (Input.GetKey(KeyCode.W))
+            _inputValues[0] = 1.0f;
+        else if (Input.GetKey(KeyCode.S))
+            _inputValues[0] = -1.0f;
+        else
+            _inputValues[0] = 0.0f;
+
+        if (Input.GetKey(KeyCode.UpArrow))
+            _inputValues[1] = 1.0f;
+        else if (Input.GetKey(KeyCode.DownArrow))
+            _inputValues[1] = -1.0f;
+        else
+            _inputValues[1] = 0.0f;
     }
 }
