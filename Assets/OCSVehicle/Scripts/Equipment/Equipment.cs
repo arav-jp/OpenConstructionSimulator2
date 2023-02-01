@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region Debug
+#if UNITY_EDITOR
+    [Header("Debug")]
+    [SerializeField]
+    private bool _use_inspectorInput = false;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private float[] _inspectorInput;
+#endif
+    #endregion
+
+    public virtual void Update()
     {
-        
+#if UNITY_EDITOR
+        if (_use_inspectorInput) UpdateInput(_inspectorInput);
+#endif
     }
 
     public virtual void UpdateInput(float[] inputValues) { }
