@@ -6,7 +6,7 @@ public class SwitchableLight : Equipment
 {
     #region Objects
     [SerializeField]
-    private Light[] lights;
+    private Light[] _lights;
     #endregion
 
     public override void Update()
@@ -20,7 +20,7 @@ public class SwitchableLight : Equipment
         {
             return;
         }
-        foreach (Light light in lights)
+        foreach (Light light in _lights)
         {
             light.enabled = inputValues[0] > 0.5f ? true : false;
         }
