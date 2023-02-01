@@ -248,8 +248,8 @@ MonoBehaviour:
   _rb: {fileID: 1479494784}
   _unitL: {fileID: 1132427676}
   _unitR: {fileID: 1484042656}
-  _maxTorque: 10
-  _brakeTorque: 100
+  _maxTorque: 20
+  _brakeTorque: 10
   _maxVelocity: 1
   _maxAngularVelocity: 0.5
 --- !u!4 &230818563
@@ -1357,7 +1357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 1479494782}
   _chassis: {fileID: 230818562}
-  _equipments: []
+  _equipments:
+  - {fileID: 502717152}
 --- !u!114 &1479494787
 MonoBehaviour:
   m_ObjectHideFlags: 0

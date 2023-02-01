@@ -11,7 +11,7 @@ public class TestVehicle : Vehicle
 
     private void Start()
     {
-        int[] separateIndices = {0, 2};
+        int[] separateIndices = {0, 2, 3};
         base._separateIndices = separateIndices;
     }
 

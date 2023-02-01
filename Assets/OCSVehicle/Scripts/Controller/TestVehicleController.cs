@@ -6,7 +6,7 @@ public class TestVehicleController : VehicleController
 {
     private void Awake()
     {
-        _inputValues = new float[2];
+        _inputValues = new float[3];
     }
     
     private void Update()
@@ -24,5 +24,10 @@ public class TestVehicleController : VehicleController
             _inputValues[1] = -1.0f;
         else
             _inputValues[1] = 0.0f;
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            _inputValues[2] = _inputValues[2] > 0.5f ? 0.0f : 1.0f;
+        }
     }
 }
