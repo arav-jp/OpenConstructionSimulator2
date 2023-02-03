@@ -19,12 +19,15 @@ public class LagSystem : MonoBehaviour
 
     [SerializeField]
     protected float _T;
+    public float T { get => _T; set => _T = value; }
 
     [SerializeField]
     protected float _value_min;
+    public float value_min { get => _value_min; set => _value_min = value; }
 
     [SerializeField]
     protected float _value_max;
+    public float value_max { get => _value_max; set => _value_max = value; }
     #endregion
 
     #region Result
@@ -60,6 +63,7 @@ public class LagSystem : MonoBehaviour
 
     public virtual void SetTarget(float value_target)
     {
+        if (value_target == _value_target) return;
         _value_target = value_target;
         _value_last = _value;
         _time_last = Time.time;
