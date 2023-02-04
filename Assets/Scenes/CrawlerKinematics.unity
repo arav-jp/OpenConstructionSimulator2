@@ -837,8 +837,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928679070}
-  - component: {fileID: 928679071}
-  - component: {fileID: 928679069}
   m_Layer: 0
   m_Name: Dozer
   m_TagString: Untagged
@@ -846,26 +844,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &928679069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928679068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b115543aa875e14f85465855c028599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _setTarget: 0
-  _targetValue: 0
-  _T: 1
-  _value_min: 0
-  _value_max: 180
-  _value: 0
-  _d_value: 0
-  _value_target: 0
 --- !u!4 &928679070
 Transform:
   m_ObjectHideFlags: 0
@@ -883,27 +861,6 @@ Transform:
   m_Father: {fileID: 484516993}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &928679071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928679068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8059eaee7dd104a9061f6c78c61055, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _use_inspectorInput: 0
-  _inspectorInput: []
-  _lagSystem: {fileID: 928679069}
-  _controlTarget: {fileID: 1732865170669199581}
-  _axis: {x: 1, y: 0, z: 0}
-  _override: 1
-  _T: 1
-  _angle_min: -20
-  _angle_max: 0
 --- !u!1 &955512357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1540,7 @@ MonoBehaviour:
   _equipments:
   - {fileID: 485427215}
   - {fileID: 502717152}
-  - {fileID: 928679071}
+  - {fileID: 0}
 --- !u!114 &1479494787
 MonoBehaviour:
   m_ObjectHideFlags: 0
