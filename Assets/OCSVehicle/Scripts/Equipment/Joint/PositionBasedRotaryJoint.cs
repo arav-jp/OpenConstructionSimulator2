@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PositionBasedRotaryJoint : RotaryJoint
 {
-    [Header("Parameters (will override LagSystem params)")]
+    [Header("Parameters (will override TransferFunction params)")]
     [SerializeField]
     private bool _override = false;
-    [SerializeField]
-    private float _T = 1.0f;
     [SerializeField] 
     private float _angle_min = 0.0f;
     [SerializeField]
@@ -18,21 +16,19 @@ public class PositionBasedRotaryJoint : RotaryJoint
     {
         if (_override)
         {
-            _lagSystem.T = _T;
-            _lagSystem.value_min = _angle_min;
-            _lagSystem.value_max = _angle_max;
+            _transferFunction._output_min = _angle_min;
+            _transferFunction._output_max = _angle_max;
         }
         else
         {
-            _T = _lagSystem.T;
-            _angle_min = _lagSystem.value_min;
-            _angle_max = _lagSystem.value_max;
+            _angle_min = _transferFunction._output_min;
+            _angle_max = _transferFunction._output_max;
         }
         base.Start();
     }
     public override void Update()
     {
-        _controlTarget.rotation *= Quaternion.AngleAxis(_lagSystem.d_value, _axis);
+        _controlTarget.rotation *= Quaternion.AngleAxis(_transferFunction.D_Output(), _axis);
         base.Update();
     }
 }
