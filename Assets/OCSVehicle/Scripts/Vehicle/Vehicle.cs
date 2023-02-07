@@ -21,7 +21,7 @@ public class Vehicle : MonoBehaviour
                 input[j] = _controller.inputValues[_separateIndices[i] + j];
             }
             if (i == 0) _chassis.UpdateInput(input);
-            else _equipments[i - 1].UpdateInput(input);
+            else if (_equipments[i - 1])_equipments[i - 1].UpdateInput(input);
         }
     }
 }
