@@ -16,19 +16,20 @@ public class PositionBasedRotaryJoint : RotaryJoint
     {
         if (_override)
         {
-            _transferFunction._output_min = _angle_min;
-            _transferFunction._output_max = _angle_max;
+            transferFunction.output_min = _angle_min;
+            transferFunction.output_max = _angle_max;
         }
         else
         {
-            _angle_min = _transferFunction._output_min;
-            _angle_max = _transferFunction._output_max;
+            _angle_min = transferFunction.output_min;
+            _angle_max = transferFunction.output_max;
         }
         base.Start();
     }
     public override void Update()
     {
-        _controlTarget.rotation *= Quaternion.AngleAxis(_transferFunction.D_Output(), _axis);
         base.Update();
+        if (!Application.isPlaying) return;
+        _controlTarget.rotation *= Quaternion.AngleAxis(transferFunction.d_output, _axis);
     }
 }
