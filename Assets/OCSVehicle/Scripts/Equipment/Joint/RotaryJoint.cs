@@ -29,6 +29,7 @@ public class RotaryJoint : Equipment
 
     public virtual void Start()
     {
+        transferFunction.Start();
     }
 
     new public virtual void Update()

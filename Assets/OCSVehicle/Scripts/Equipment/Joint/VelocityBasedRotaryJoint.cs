@@ -26,6 +26,7 @@ public class VelocityBasedRotaryJoint : RotaryJoint
     public override void Start()
     {
         if (!Application.isPlaying) return;
+        base.Start();
         if (_override)
         {
             transferFunction.output_min = _angleVelocity_min;
@@ -37,7 +38,6 @@ public class VelocityBasedRotaryJoint : RotaryJoint
             _angle_max = transferFunction.output_max;
         }
         _angle = _angle_init;
-        base.Start();
     }
     public override void Update()
     {

@@ -15,6 +15,7 @@ public class PositionBasedRotaryJoint : RotaryJoint
     public override void Start()
     {
         if (!Application.isPlaying) return;
+        base.Start();
         if (_override)
         {
             transferFunction.output_min = _angle_min;
@@ -25,7 +26,6 @@ public class PositionBasedRotaryJoint : RotaryJoint
             _angle_min = transferFunction.output_min;
             _angle_max = transferFunction.output_max;
         }
-        base.Start();
     }
     public override void Update()
     {
