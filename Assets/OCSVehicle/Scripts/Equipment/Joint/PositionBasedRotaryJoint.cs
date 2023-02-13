@@ -14,6 +14,7 @@ public class PositionBasedRotaryJoint : RotaryJoint
 
     public override void Start()
     {
+        if (!Application.isPlaying) return;
         if (_override)
         {
             transferFunction.output_min = _angle_min;

@@ -25,9 +25,10 @@ public class VelocityBasedRotaryJoint : RotaryJoint
 
     public override void Start()
     {
+        if (!Application.isPlaying) return;
         if (_override)
         {
-            transferFunction.output_min = _angleVelocity_min;
+            transferFunction.output_min = _angleVelocity_min;o
             transferFunction.output_max = _angleVelocity_max;
         }
         else
