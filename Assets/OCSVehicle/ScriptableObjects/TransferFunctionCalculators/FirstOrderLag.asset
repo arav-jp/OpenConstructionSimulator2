@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
   m_Name: FirstOrderLag
   m_EditorClassIdentifier: 
-  _input: 0
-  _output_min: 0
-  _output_max: 1
-  _T: 1
+  parameters: []
+  _T: 0

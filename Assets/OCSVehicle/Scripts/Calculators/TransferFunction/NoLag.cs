@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class NoLag : TransferFunction
+public class NoLag : TransferFunctionCalculator
 {
-    public override void Update()
+    public override float Calc(float input, float time, float initial)
     {
-        _output = Mathf.Clamp(_input, _output_min, _output_max);
-        base.Update();
+        return Mathf.Clamp(input, output_min, output_max);
     }
 }

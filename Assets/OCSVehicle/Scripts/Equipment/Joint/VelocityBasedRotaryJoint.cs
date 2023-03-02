@@ -25,22 +25,25 @@ public class VelocityBasedRotaryJoint : RotaryJoint
 
     public override void Start()
     {
+        if (!Application.isPlaying) return;
+        base.Start();
         if (_override)
         {
-            _transferFunction._output_min = _angleVelocity_min;
-            _transferFunction._output_max = _angleVelocity_max;
+            transferFunction.output_min = _angleVelocity_min;
+            transferFunction.output_max = _angleVelocity_max;
         }
         else
         {
-            _angleVelocity_min = _transferFunction._output_min;
-            _angleVelocity_max = _transferFunction._output_max;
+            _angle_min = transferFunction.output_min;
+            _angle_max = transferFunction.output_max;
         }
         _angle = _angle_init;
-        base.Start();
     }
     public override void Update()
     {
-        float d_angle = _transferFunction.Output()*Time.deltaTime;
+        base.Update();
+        if (!Application.isPlaying) return;
+        float d_angle = transferFunction.output*Time.deltaTime;
         _controlTarget.rotation *= Quaternion.AngleAxis(d_angle, _axis);
         _angle += d_angle;
 
@@ -54,6 +57,5 @@ public class VelocityBasedRotaryJoint : RotaryJoint
             _controlTarget.rotation *= Quaternion.AngleAxis(- _angle + _angle_min, _axis);
             _angle = _angle_min;
         }
-        base.Update();
     }
 }

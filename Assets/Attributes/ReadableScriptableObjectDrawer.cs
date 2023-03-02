@@ -5,7 +5,7 @@ using UnityEditor;
 
 #if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(ReadableScriptableObjectAttribute))]
-public class ReadOnlyDrawer : PropertyDrawer
+public class ReadableScriptableObjectDrawer : PropertyDrawer
 {
     private Editor editor = null;
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
