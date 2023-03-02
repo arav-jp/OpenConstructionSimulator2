@@ -6,13 +6,12 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+[ExecuteInEditMode]
 public class RotaryJoint : Equipment
 {
     #region Objects
     [Header("Objects")]
     public TransferFunction transferFunction;
-    [ReadableScriptableObject]
-    public TransferFunction _transferFunction;
 
     [SerializeField]
     protected Transform _controlTarget;
@@ -26,17 +25,18 @@ public class RotaryJoint : Equipment
 
     public virtual void Awake()
     {
-        _transferFunction.Awake();
     }
 
     public virtual void Start()
     {
+        transferFunction.Start();
     }
 
     new public virtual void Update()
     {
+        transferFunction.Update();
+        if (!Application.isPlaying) return;
         base.Update();
-        _transferFunction.Update();
     }
 
     public override void UpdateInput(float[] inputValues)
@@ -45,29 +45,6 @@ public class RotaryJoint : Equipment
         {
             return;
         }
-        _transferFunction.Input(inputValues[0]);
+        transferFunction.SetInput(inputValues[0]);
     }
 }
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(RotaryJoint), true)]
-[CanEditMultipleObjects]
-public class RotaryJointEditor : Editor
-{
-    RotaryJoint _target;
-
-    private void OnEnable()
-    {
-        if (_target) return;
-        _target = (RotaryJoint) target;
-    }
-    public override void OnInspectorGUI()
-    {
-        if (_target.transferFunction && (!_target._transferFunction || !_target._transferFunction.name.Contains(_target.transferFunction.name)))
-        {
-            _target._transferFunction = Instantiate(_target.transferFunction);
-        }
-        base.OnInspectorGUI();
-    }
-}
-#endif

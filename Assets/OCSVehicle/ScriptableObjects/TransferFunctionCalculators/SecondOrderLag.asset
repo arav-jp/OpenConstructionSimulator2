@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94946c9ff3948f443b6f5643f7c1a8e7, type: 3}
-  m_Name: NoLag
+  m_Script: {fileID: 11500000, guid: 1d5f883222863f34f8a8b22e76dfb4bf, type: 3}
+  m_Name: SecondOrderLag
   m_EditorClassIdentifier: 
-  _input: 0
-  _output_min: 0
-  _output_max: 1
+  output_min: 0
+  output_max: 0
+  _zeta: 0
+  _omega_n: 0

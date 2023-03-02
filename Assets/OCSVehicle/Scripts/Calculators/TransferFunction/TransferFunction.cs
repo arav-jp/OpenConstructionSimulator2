@@ -1,50 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-[CreateAssetMenu]
-public class TransferFunction : ScriptableObject
+[System.Serializable]
+public class TransferFunction
 {
-    protected float _input;
-    protected float _output;
+    public TransferFunctionCalculator calculator;
+    [ReadableScriptableObject]
+    [SerializeField]
+    TransferFunctionCalculator _calculator;
 
-    protected float _time_input;
+    [SerializeField]
+    [ReadOnly]
+    private float[] parameters;
 
-    public float _output_min;
-    public float _output_max;
+    public float output_min { get => _calculator.output_min; set => _calculator.output_min = value; }
+    public float output_max { get => _calculator.output_max; set => _calculator.output_max = value; }
+
+    private float _input;
+    public float input { set => SetInput(value); }
+
+    private float _output;
+    public float output { get => _output; }
+    private float _output_last;
 
     private float _d_output;
+    public float d_output { get => _d_output; }
     private float _output_old;
 
-    public virtual void Awake()
+    private float _inputTime;
+
+    public void Start()
     {
-        _input = 0.0f;
-        _output = 0.0f;
-        _time_input = 0.0f;
-        _d_output = 0.0f;
-        _output_old = 0.0f;
+        if (!calculator) Debug.LogError("No calculator");
+        if (!_calculator) _calculator = Object.Instantiate(calculator);
+        _calculator.SetParams(ref parameters);
     }
 
-    public virtual void Update()
+    [ExecuteInEditMode]
+    public void Update()
     {
+        if (!Application.isPlaying)
+        {
+            if (calculator && (!_calculator || _calculator.GetType() != calculator.GetType()))
+            {
+                _calculator = Object.Instantiate(calculator);
+                _calculator.SetParams(ref parameters);
+            }
+            if (_calculator)
+            {
+                _calculator.GetParams(ref parameters);
+            }
+            return; 
+        }
+        _output = _calculator.Calc(_input, Time.time - _inputTime, _output_last);
         _d_output = _output - _output_old;
         _output_old = _output;
     }
 
-    public virtual void Input(float input)
+    public void SetInput(float value)
     {
-        if (_input == input) return;
-        _input = input;
-        _time_input = Time.time;
-    }
-
-    public virtual float Output()
-    {
-        return _output;
-    }
-
-    public virtual float D_Output()
-    {
-        return _d_output;
+        if (value == _input) return;
+        _inputTime = Time.time;
+        _output_last = _output;
+        _input = value;
     }
 }
