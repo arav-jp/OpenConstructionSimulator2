@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &91075967
+--- !u!114 &80708319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,7 +231,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &329101142
+--- !u!114 &431248058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,12 +240,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
-  m_Name: FirstOrderLag(Clone)
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
   m_EditorClassIdentifier: 
-  output_min: 0
-  output_max: 0
-  _T: 0.1
+  _topic: crawlerUnitR
+--- !u!1 &558707490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 558707492}
+  - component: {fileID: 558707491}
+  m_Layer: 0
+  m_Name: ROS Connection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &558707491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558707490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acef0b79454c9b4dae3f8139bc4ba77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RosIPAddress: 127.0.0.1
+  m_RosPort: 10000
+  m_ConnectOnStart: 1
+  m_KeepaliveTime: 1
+  m_NetworkTimeoutSeconds: 2
+  m_SleepTimeSeconds: 0.01
+  m_ShowHUD: 1
+  m_TFTopics:
+  - /tf
+  listenForTFMessages: 1
+--- !u!4 &558707492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558707490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &660439124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +312,103 @@ MonoBehaviour:
   output_min: 0
   output_max: 0
   _T: 0.4
+--- !u!114 &725866087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  output_min: 0
+  output_max: 0
+  _T: 0.3
+--- !u!114 &845071656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
+  m_EditorClassIdentifier: 
+  _topic: arm
+--- !u!114 &886426893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
+  m_EditorClassIdentifier: 
+  _topic: boom
+--- !u!114 &1084972636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
+  m_EditorClassIdentifier: 
+  _topic: crawlerUnitL
+--- !u!114 &1138889551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
+  m_EditorClassIdentifier: 
+  _topic: body
+--- !u!114 &1198980645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  output_min: 0
+  output_max: 0
+  _T: 0.1
+--- !u!114 &1298564912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  output_min: 0
+  output_max: 0
+  _T: 0.3
 --- !u!1 &1366287293
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,36 +504,6 @@ Transform:
   m_Father: {fileID: 1786456021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1534260487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  output_min: 0
-  output_max: 0
-  _T: 0.3
---- !u!114 &1635551178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b19af5bbf1904a47bb07bc2a0fe143d, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  output_min: 0
-  output_max: 0
-  _T: 0.3
 --- !u!1 &1786456020
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +535,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820069000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
+  m_EditorClassIdentifier: 
+  _topic: dozer
+--- !u!114 &1829242989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d13cc9fd90e9d49a0786b89c693cb7, type: 3}
+  m_Name: RosInput(Clone)
+  m_EditorClassIdentifier: 
+  _topic: bucket
 --- !u!1001 &5697160535836251631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,14 +568,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5697160536069000844, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+    - target: {fileID: 498310399, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
+      value: 
+      objectReference: {fileID: 431248058}
+    - target: {fileID: 503043433, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
+      value: 
+      objectReference: {fileID: 1829242989}
+    - target: {fileID: 503043433, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: transferFunction._calculator
       value: 
-      objectReference: {fileID: 91075967}
-    - target: {fileID: 5697160536778273293, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      objectReference: {fileID: 1198980645}
+    - target: {fileID: 865323252, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
+      value: 
+      objectReference: {fileID: 1084972636}
+    - target: {fileID: 1363249533, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
+      value: 
+      objectReference: {fileID: 1820069000}
+    - target: {fileID: 1363249533, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: transferFunction._calculator
       value: 
-      objectReference: {fileID: 1635551178}
+      objectReference: {fileID: 725866087}
+    - target: {fileID: 1631134409, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
+      value: 
+      objectReference: {fileID: 886426893}
+    - target: {fileID: 1631134409, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: transferFunction._calculator
+      value: 
+      objectReference: {fileID: 1298564912}
+    - target: {fileID: 2054890595, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
+      value: 
+      objectReference: {fileID: 845071656}
+    - target: {fileID: 2054890595, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: transferFunction._calculator
+      value: 
+      objectReference: {fileID: 80708319}
     - target: {fileID: 5697160537353510925, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -480,17 +656,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Backhoe
       objectReference: {fileID: 0}
-    - target: {fileID: 5697160537502227693, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: transferFunction._calculator
+    - target: {fileID: 5697160537547928299, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: inputManager._inputInterface
       value: 
-      objectReference: {fileID: 329101142}
+      objectReference: {fileID: 1138889551}
     - target: {fileID: 5697160537547928299, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: transferFunction._calculator
       value: 
       objectReference: {fileID: 660439124}
-    - target: {fileID: 5697160537668107771, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: transferFunction._calculator
-      value: 
-      objectReference: {fileID: 1534260487}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}

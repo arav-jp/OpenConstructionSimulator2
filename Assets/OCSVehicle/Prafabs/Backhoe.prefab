@@ -1306,7 +1306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5537756880533464077}
-  - component: {fileID: 5537756880533464114}
+  - component: {fileID: 498310399}
   m_Layer: 0
   m_Name: CrawlerUnitR
   m_TagString: Untagged
@@ -1329,7 +1329,7 @@ Transform:
   m_Father: {fileID: 5697160536597631696}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5537756880533464114
+--- !u!114 &498310399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1341,11 +1341,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88eb2ab980b562540aca08010ebd1f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelColliders: []
-  _wheelCollidersParent: {fileID: 5537756880923487708}
-  _useInspectorInput: 0
+  _use_inspectorInput: 0
   _inspectorInput: 0
-  _inspectorInputMagnitude: 1
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - crawlerUnitR
+  _wheelColliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _wheelCollidersParent: {fileID: 5537756880923487708}
+  _maxTorque: 20
+  _brakeTorque: 10
 --- !u!1 &5537756880536188537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5537756880986172425}
-  - component: {fileID: 5537756880986172430}
+  - component: {fileID: 865323252}
   m_Layer: 0
   m_Name: CrawlerUnitL
   m_TagString: Untagged
@@ -1570,7 +1583,7 @@ Transform:
   m_Father: {fileID: 5697160536597631696}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5537756880986172430
+--- !u!114 &865323252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1582,11 +1595,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88eb2ab980b562540aca08010ebd1f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelColliders: []
-  _wheelCollidersParent: {fileID: 5537756880536188542}
-  _useInspectorInput: 0
+  _use_inspectorInput: 0
   _inspectorInput: 0
-  _inspectorInputMagnitude: 1
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - crawlerUnitL
+  _wheelColliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _wheelCollidersParent: {fileID: 5537756880536188542}
+  _maxTorque: 20
+  _brakeTorque: 10
 --- !u!1 &5569281834693437348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +1949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5697160536069000845}
-  - component: {fileID: 5697160536069000844}
+  - component: {fileID: 2054890595}
   m_Layer: 0
   m_Name: ArmController
   m_TagString: Untagged
@@ -1945,7 +1971,7 @@ Transform:
   m_Father: {fileID: 5697160535892120140}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5697160536069000844
+--- !u!114 &2054890595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1958,8 +1984,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _use_inspectorInput: 0
-  _inspectorInput:
-  - 0
+  _inspectorInput: 0
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - arm
   transferFunction:
     calculator: {fileID: 11400000, guid: 3830c54c44e38b5428ce9cee80bf0c98, type: 2}
     _calculator: {fileID: 0}
@@ -2129,7 +2161,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5697160536597631696}
-  - component: {fileID: 5697160536597631663}
   m_Layer: 0
   m_Name: Chassis
   m_TagString: Untagged
@@ -2153,27 +2184,6 @@ Transform:
   m_Father: {fileID: 5697160537353510925}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5697160536597631663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697160536597631697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c82a77974187f94997e7bff642f0c63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _use_inspectorInput: 0
-  _inspectorInput: []
-  _rb: {fileID: 5697160537353510923}
-  _unitL: {fileID: 5537756880986172430}
-  _unitR: {fileID: 5537756880533464114}
-  _maxTorque: 20
-  _brakeTorque: 10
-  _maxVelocity: 1
-  _maxAngularVelocity: 0.5
 --- !u!1 &5697160536611602169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,7 +2256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5697160536778273294}
-  - component: {fileID: 5697160536778273293}
+  - component: {fileID: 1631134409}
   m_Layer: 0
   m_Name: BoomController
   m_TagString: Untagged
@@ -2268,7 +2278,7 @@ Transform:
   m_Father: {fileID: 5697160535892120140}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5697160536778273293
+--- !u!114 &1631134409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2281,8 +2291,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _use_inspectorInput: 0
-  _inspectorInput:
-  - 0
+  _inspectorInput: 0
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - boom
   transferFunction:
     calculator: {fileID: 11400000, guid: 3830c54c44e38b5428ce9cee80bf0c98, type: 2}
     _calculator: {fileID: 0}
@@ -2504,9 +2520,8 @@ GameObject:
   - component: {fileID: 5697160537353510925}
   - component: {fileID: 5697160537353510922}
   - component: {fileID: 5697160537353510923}
-  - component: {fileID: 5697160537353510920}
-  - component: {fileID: 5697160537353510921}
   - component: {fileID: 5697160537353510924}
+  - component: {fileID: 2132827442}
   m_Layer: 0
   m_Name: Backhoe
   m_TagString: Untagged
@@ -2561,39 +2576,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5697160537353510920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697160537353510926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85209899893857d4ea4d8041e84c8ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _controller: {fileID: 5697160537353510921}
-  _chassis: {fileID: 5697160536597631663}
-  _equipments:
-  - {fileID: 5697160537668107771}
-  - {fileID: 5697160537547928299}
-  - {fileID: 5697160536778273293}
-  - {fileID: 5697160536069000844}
-  - {fileID: 5697160537502227693}
---- !u!114 &5697160537353510921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697160537353510926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5837bf10dc3fed3419541fa9e7771e4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputValues: []
 --- !u!114 &5697160537353510924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2609,6 +2591,21 @@ MonoBehaviour:
   _rb: {fileID: 5697160537353510923}
   _centerOfMass: {x: 0, y: 0, z: 0}
   _centerOfMassObj: {fileID: 5697160536612370115}
+--- !u!114 &2132827442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697160537353510926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f32c21ea7aeecc478497d16234365c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 5697160537353510923}
+  _maxVelocity: 1
+  _maxAngularVelocity: 0.5
 --- !u!1 &5697160537502227695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,7 +2615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5697160537502227694}
-  - component: {fileID: 5697160537502227693}
+  - component: {fileID: 503043433}
   m_Layer: 0
   m_Name: BucketController
   m_TagString: Untagged
@@ -2640,7 +2637,7 @@ Transform:
   m_Father: {fileID: 5697160535892120140}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5697160537502227693
+--- !u!114 &503043433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2653,8 +2650,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _use_inspectorInput: 0
-  _inspectorInput:
-  - 0
+  _inspectorInput: 0
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - bucket
   transferFunction:
     calculator: {fileID: 11400000, guid: 3830c54c44e38b5428ce9cee80bf0c98, type: 2}
     _calculator: {fileID: 0}
@@ -2713,7 +2716,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _use_inspectorInput: 0
-  _inspectorInput: []
+  _inspectorInput: 0
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - body
   transferFunction:
     calculator: {fileID: 11400000, guid: 3830c54c44e38b5428ce9cee80bf0c98, type: 2}
     _calculator: {fileID: 0}
@@ -2770,7 +2780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5697160537668107772}
-  - component: {fileID: 5697160537668107771}
+  - component: {fileID: 1363249533}
   m_Layer: 0
   m_Name: DozerController
   m_TagString: Untagged
@@ -2792,7 +2802,7 @@ Transform:
   m_Father: {fileID: 5697160535892120140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5697160537668107771
+--- !u!114 &1363249533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2804,8 +2814,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8059eaee7dd104a9061f6c78c61055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _use_inspectorInput: 1
-  _inspectorInput: []
+  _use_inspectorInput: 0
+  _inspectorInput: 0
+  useUnityInput: 0
+  inputManager:
+    inputInterface: {fileID: 11400000, guid: d09b0ba71f525ff4c840537f413ccb75, type: 2}
+    _inputInterface: {fileID: 0}
+    parameters:
+      stringParams:
+      - dozer
   transferFunction:
     calculator: {fileID: 11400000, guid: 3830c54c44e38b5428ce9cee80bf0c98, type: 2}
     _calculator: {fileID: 0}

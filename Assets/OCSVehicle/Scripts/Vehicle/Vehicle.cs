@@ -12,6 +12,7 @@ public class Vehicle : MonoBehaviour
 
     public virtual void Update()
     {
+        /*
         for(int i = 0; i < _separateIndices.Length - 1; i++)
         {
             int size = _separateIndices[i + 1] - _separateIndices[i];
@@ -21,7 +22,8 @@ public class Vehicle : MonoBehaviour
                 input[j] = _controller.inputValues[_separateIndices[i] + j];
             }
             if (i == 0) _chassis.UpdateInput(input);
-            else if (_equipments[i - 1])_equipments[i - 1].UpdateInput(input);
+            else if (_equipments[i - 1])_equipments[i - 1].UnityInput(input);
         }
+        */
     }
 }

@@ -14,15 +14,11 @@ public class SwitchableLight : Equipment
         base.Update();
     }
 
-    public override void UpdateInput(float[] inputValues)
+    public override void UnityInput(float inputValue)
     {
-        if (inputValues.Length != 1)
-        {
-            return;
-        }
         foreach (Light light in _lights)
         {
-            light.enabled = inputValues[0] > 0.5f ? true : false;
+            light.enabled = inputValue > 0.5f ? true : false;
         }
     }
 }

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrawlerUnit : MonoBehaviour
+[ExecuteInEditMode]
+public class CrawlerUnit : Equipment
 {
     #region Objects
     [Header("Objects")]
@@ -14,24 +15,14 @@ public class CrawlerUnit : MonoBehaviour
     #endregion
 
     #region Parameters
+    [SerializeField]
+    private float _maxTorque = 1.0f;
+    [SerializeField]
+    private float _brakeTorque = 1.0f;
     #endregion
 
     #region Utils
     private Transform _transform;
-    #endregion
-
-    #region Debug
-#if UNITY_EDITOR
-    [Header("Debug")]
-
-    [SerializeField]
-    private bool _useInspectorInput = false;
-
-    [SerializeField, Range(-1.0f, 1.0f)]
-    private float _inspectorInput = 0.0f;
-    [SerializeField]
-    private float _inspectorInputMagnitude = 1.0f;
-#endif
     #endregion
 
     private void Awake()
@@ -42,8 +33,10 @@ public class CrawlerUnit : MonoBehaviour
             _wheelColliders = new WheelCollider[_wheelCollidersParent.childCount];
     }
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+        if (!Application.isPlaying) return;
         if (_wheelCollidersParent)
         {
             for (int i = 0; i < _wheelCollidersParent.childCount; i++)
@@ -54,11 +47,22 @@ public class CrawlerUnit : MonoBehaviour
         }
     }
 
-    private void Update()
+    public override void Update()
     {
-#if UNITY_EDITOR
-        if (_useInspectorInput) UpdateTorque(_inspectorInput*_inspectorInputMagnitude);
-#endif
+        base.Update();
+        if (!Application.isPlaying) return;
+        if (!useUnityInput)
+        {
+            UpdateTorque(Mathf.Clamp(inputManager.inputValue, -1.0f, 1.0f) * _maxTorque);
+            UpdateBrakeTorque(Mathf.Abs(inputManager.inputValue) < 0.01f ? _brakeTorque : 0.0f);
+        }
+    }
+
+    public override void UnityInput(float inputValue)
+    {
+        if (!useUnityInput) return;
+        UpdateTorque(Mathf.Clamp(inputValue, -1.0f, 1.0f) * _maxTorque);
+        UpdateBrakeTorque(Mathf.Abs(inputValue) < 0.01f ? _brakeTorque : 0.0f);
     }
 
     public void UpdateTorque(float torque)
