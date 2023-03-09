@@ -38,7 +38,7 @@ public class RotaryJoint : Equipment
         transferFunction.Update();
         base.Update();
         if (!Application.isPlaying) return;
-        if (!useUnityInput) transferFunction.SetInput(inputManager.inputValue);
+        if (!useUnityInput) transferFunction.SetInput(inputManager.input);
     }
 
     public override void UnityInput(float inputValue)

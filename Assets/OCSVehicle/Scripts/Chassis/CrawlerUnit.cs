@@ -53,8 +53,8 @@ public class CrawlerUnit : Equipment
         if (!Application.isPlaying) return;
         if (!useUnityInput)
         {
-            UpdateTorque(Mathf.Clamp(inputManager.inputValue, -1.0f, 1.0f) * _maxTorque);
-            UpdateBrakeTorque(Mathf.Abs(inputManager.inputValue) < 0.01f ? _brakeTorque : 0.0f);
+            UpdateTorque(Mathf.Clamp(inputManager.input, -1.0f, 1.0f) * _maxTorque);
+            UpdateBrakeTorque(Mathf.Abs(inputManager.input) < 0.01f ? _brakeTorque : 0.0f);
         }
     }
 
