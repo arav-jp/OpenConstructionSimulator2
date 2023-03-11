@@ -27,24 +27,23 @@ public class RotaryJoint : Equipment
     {
     }
 
-    public virtual void Start()
+    new public virtual void Start()
     {
         transferFunction.Start();
+        base.Start();
     }
 
     new public virtual void Update()
     {
         transferFunction.Update();
-        if (!Application.isPlaying) return;
         base.Update();
+        if (!Application.isPlaying) return;
+        if (!useUnityInput) transferFunction.SetInput(inputManager.input);
     }
 
-    public override void UpdateInput(float[] inputValues)
+    public override void UnityInput(float inputValue)
     {
-        if (inputValues.Length != 1)
-        {
-            return;
-        }
-        transferFunction.SetInput(inputValues[0]);
+        if (!useUnityInput) return;
+        transferFunction.SetInput(inputValue);
     }
 }
