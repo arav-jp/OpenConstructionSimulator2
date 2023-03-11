@@ -17,10 +17,9 @@ public class Vehicle : MonoBehaviour
         }
     }
 
-    public bool Input(string name, float value)
+    public VehicleModule GetModule(string name)
     {
-        if (!_modules[name]) return false;
-        _modules[name].input.unityInput = value;
-        return true;
+        if (_modules[name]) return null;
+        return _modules[name];
     }
 }
