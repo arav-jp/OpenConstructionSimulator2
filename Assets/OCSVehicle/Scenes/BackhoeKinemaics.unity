@@ -759,9 +759,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 67546701741691111, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: _debug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 67546701741691111, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _input._scriptableObject
       value: 
       objectReference: {fileID: 1370158026}
+    - target: {fileID: 67546701741691111, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: _output._parametersCache
+      value: '{"output":0.0,"_controlType":1,"_axis":{"x":0.0,"y":1.0,"z":0.0},"_angularVelocity_min":-30.0,"_angularVelocity_max":30.0,"_angle_limit":false,"_angle_init":0.0,"_angle_min":0.0,"_angle_max":0.0}'
+      objectReference: {fileID: 0}
     - target: {fileID: 67546701741691111, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _output._scriptableObject
       value: 

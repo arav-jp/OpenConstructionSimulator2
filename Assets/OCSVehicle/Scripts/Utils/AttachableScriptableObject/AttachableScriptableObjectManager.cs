@@ -13,6 +13,9 @@ public class AttachableScriptableObjectManager
     [SerializeField]
     protected AttachableScriptableObject _scriptableObject;
 
+    public bool updated { get => GetUpdated(); }
+    private bool _updated;
+
     public virtual void Start()
     {
         if (!_scriptableObject && scriptableObject) _scriptableObject = GameObject.Instantiate(scriptableObject);
@@ -30,9 +33,18 @@ public class AttachableScriptableObjectManager
                 JsonUtility.FromJsonOverwrite(_parametersCache, _scriptableObject);
             }
             if (!_scriptableObject) return;
+            string _cache_old = _parametersCache;
             _parametersCache = JsonUtility.ToJson(_scriptableObject);
+            if(_cache_old != _parametersCache) { _updated = true; }
             return;
         }
         if (_scriptableObject) _scriptableObject.Update();
+    }
+
+    private bool GetUpdated()
+    {
+        if (!_updated) return false;
+        _updated = false;
+        return true;
     }
 }

@@ -10,6 +10,8 @@ public class VehicleModule : MonoBehaviour
     [SerializeField] private ProcessorLayerManager _transferFunction; 
     [SerializeField] private OutputInterfaceManager _output;
 
+    [SerializeField] private bool _debug = false;
+
     private Transform _transform;
 
     private void Awake()
@@ -38,7 +40,10 @@ public class VehicleModule : MonoBehaviour
         _output.output = _transferFunction.output;
 
         _output.Update();
-        
-        if(!Application.isPlaying) EditorUtility.SetDirty(this);
+
+        if (!Application.isPlaying && (_input.updated || _transferFunction.updated || _output.updated))
+        {
+            EditorUtility.SetDirty(this);
+        }
     }
 }
