@@ -12,6 +12,8 @@ public class InputInterfaceManager : AttachableScriptableObjectManager
     [HideInInspector]
     public Transform transform;
 
+    public float unityInput { set => _interface.input = value; }
+
     public override void Start()
     {
         base.Start();

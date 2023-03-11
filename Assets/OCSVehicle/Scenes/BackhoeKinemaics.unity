@@ -390,6 +390,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &607265421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
+  m_Name: UnityInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
 --- !u!114 &679022551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,20 +585,6 @@ MonoBehaviour:
   _T: 0.5
   _output_min: -1
   _output_max: 1
---- !u!114 &1491211927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a654b99eef15606439090ea4509e7499, type: 3}
-  m_Name: InspectorInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  _inputValue: 0
 --- !u!114 &1577284212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,9 +878,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 261854707}
     - target: {fileID: 226737465595271143, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: _input._useUnityInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226737465595271143, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: _input._parametersCache
+      value: '{"input":0.0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 226737465595271143, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: _input.scriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cc86d50fa882df49a18519efbdc9b61, type: 2}
+    - target: {fileID: 226737465595271143, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _input._scriptableObject
       value: 
-      objectReference: {fileID: 1491211927}
+      objectReference: {fileID: 607265421}
     - target: {fileID: 226737465595271143, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _output._scriptableObject
       value: 
