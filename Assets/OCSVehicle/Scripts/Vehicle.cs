@@ -19,7 +19,7 @@ public class Vehicle : MonoBehaviour
 
     public VehicleModule GetModule(string name)
     {
-        if (_modules[name]) return null;
+        if (!_modules[name]) return null;
         return _modules[name];
     }
 }

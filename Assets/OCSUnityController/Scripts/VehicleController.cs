@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class VehicleController : MonoBehaviour
 {
-    [SerializeField] private Vehicle _controlTarget;
+    [SerializeField] protected Vehicle _controlTarget;
 }
