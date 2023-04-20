@@ -20,7 +20,7 @@ public class Zone : MonoBehaviour
     
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         Awake();
         Start();
@@ -34,4 +34,9 @@ public class Zone : MonoBehaviour
     public virtual bool IsPointInZone(Vector3 point) { return false; }
 
     public virtual void Visualize() { }
+
+    protected void OnValidate()
+    {
+        OnEnable();
+    }
 }

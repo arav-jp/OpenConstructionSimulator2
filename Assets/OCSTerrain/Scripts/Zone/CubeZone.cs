@@ -55,9 +55,4 @@ public class CubeZone : Zone
             j = i;
         }
     }
-
-    private bool BitRead(int value, int bitNum)
-    {
-        return (value & (1 << bitNum))!=0;
-    }
 }
