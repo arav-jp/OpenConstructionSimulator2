@@ -17,6 +17,7 @@ public class PillarZone : Zone
     protected override void Awake()
     {
         base.Awake();
+        if (_vertices == null) _vertices = new Transform[0];
         _vertexPoints = new Vector3[_vertices.Length];
     }
 
