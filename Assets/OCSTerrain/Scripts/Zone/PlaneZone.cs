@@ -19,11 +19,6 @@ public class PlaneZone : Zone
         _width_2 = width * 0.5f;
     }
 
-    private void Update()
-    {
-        IsPointInZone(Vector3.zero);
-    }
-
     public override bool IsPointInZone(Vector3 point)
     {
         Vector3 point_local = base._transform.InverseTransformPoint(point);
