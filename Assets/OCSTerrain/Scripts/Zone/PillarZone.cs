@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PillarZone : Zone
 {
@@ -57,7 +58,7 @@ public class PillarZone : Zone
             vertexPoints_world[i] = base._transform.TransformPoint(_vertexPoints[i]);
         }
 
-        Vector3 height_2_vec = base._transform.up*_height_2;
+        Vector3 height_2_vec = base._transform.up * _height_2;
         int j = vertexPoints_world.Length - 1;
         for (int i = 0; i < vertexPoints_world.Length; i++)
         {
@@ -67,4 +68,30 @@ public class PillarZone : Zone
             j = i;
         }
     }
+
+    public void LoadChildrenAsVertices()
+    {
+        _vertices = new Transform[_transform.childCount];
+        for (int i = 0; i < _transform.childCount; i++) _vertices[i] = _transform.GetChild(i);
+    }
+}
+
+[CustomEditor(typeof(PillarZone))]
+public class PillarZoneEditor : Editor
+{
+    PillarZone _target;
+    public void OnEnable()
+    {
+        _target = target as PillarZone;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Load Children as Vertices"))
+        {
+            _target.LoadChildrenAsVertices();
+        }
+    }
+
 }
