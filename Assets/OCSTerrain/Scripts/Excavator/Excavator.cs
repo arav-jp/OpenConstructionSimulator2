@@ -18,7 +18,7 @@ public class Excavator : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag != "Terrain") return;
         _time_start = Time.time;
