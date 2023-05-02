@@ -13,8 +13,10 @@ namespace VoxelSystem
 
         private float _resolution { get => _mapData.resolution; }
         private int _size { get => _mapData.size.y; }
+        private float _density { get => _pillarData.density; }
         private Vector3Int _index { get => _pillarData.index; }
         public VoxelData pillarData { get => _pillarData; }
+        public float pillarHeight { get => _pillarData.height; }
 
         public VoxelPillar(VoxelMapData mapData, Vector3Int index)
         {
@@ -47,14 +49,20 @@ namespace VoxelSystem
 
         public void SetHeight(float height, float density)
         {
-            _pillarData.volume = _resolution * _resolution * height;
+            _pillarData.height = height;
             _pillarData.density = density;
 
             for (int y = 0; y < _size; y++)
             {
-                _voxels[y].Set(Mathf.Clamp(height, 0, _resolution), density);
+                _voxels[y].height = Mathf.Clamp(height, 0, _resolution);
+                _voxels[y].density = density;
                 height -= _resolution;
             }
+        }
+
+        public void SetHeight(float height)
+        {
+            SetHeight(height, _density);
         }
 
         public Voxel GetVoxel(int index)

@@ -11,6 +11,8 @@ namespace VoxelSystem
 
         private float _resolution { get => _mapData.resolution; }
         public VoxelData voxelData { get => _voxelData; }
+        public float height { get => _voxelData.height; set => _voxelData.height = value; }
+        public float density { get => _voxelData.density; set => _voxelData.density = value; }
 
         public Voxel(VoxelMapData mapData, Vector3Int index)
         {
