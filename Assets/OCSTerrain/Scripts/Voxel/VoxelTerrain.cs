@@ -138,5 +138,10 @@ namespace VoxelSystem
             _voxelMap.Inactivate();
             _activated = false;
         }
+
+        public void SetTargetTerrain(TerrainManager terrain)
+        {
+            _terrainManager = terrain;
+        }
     }
 }
