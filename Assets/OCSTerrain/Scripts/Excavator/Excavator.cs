@@ -52,8 +52,11 @@ public class Excavator : MonoBehaviour
         Vector3 origin = new Vector3(_transform.position.x, _terrain.height_max + 0.05f, _transform.position.z);
         Ray ray = new Ray(origin, Vector3.down);
         RaycastHit hit;
+
         if(Physics.Raycast(ray, out hit, _terrain.height + 0.1f, _terrainLayer))
         {
+            TerrainManager tm = other.GetComponent<TerrainManager>();
+            if (tm) _voxelTerrain.SetTargetTerrain(tm);
             _voxelTerrain.Activate(hit.point);
         }
     }
