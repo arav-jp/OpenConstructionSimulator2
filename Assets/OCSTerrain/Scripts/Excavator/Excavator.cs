@@ -13,6 +13,9 @@ public class Excavator : MonoBehaviour
     private VoxelTerrain _voxelTerrain;
 
     [SerializeField]
+    private ActiveZone _activeZone;
+
+    [SerializeField]
     private float _timeout;
 
     [SerializeField]
@@ -22,6 +25,10 @@ public class Excavator : MonoBehaviour
     #region Parameters
     private Transform _transform;
     private float _time_start;
+    #endregion
+
+    #region Properties
+    public ActiveZone activeZone { get => _activeZone; }
     #endregion
 
     private void Awake()

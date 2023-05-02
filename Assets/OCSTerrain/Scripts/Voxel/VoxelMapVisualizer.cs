@@ -14,6 +14,7 @@ public class VoxelMapVisualizer : Visualizer<VoxelMap>
         {
             for(int z = 0; z < mapData.size.z; z++)
             {
+                /*
                 for(int y = 0; y < mapData.size.y; y++)
                 {
                     VoxelData voxelData = _target.GetVoxel(x, y, z).voxelData;
@@ -21,6 +22,10 @@ public class VoxelMapVisualizer : Visualizer<VoxelMap>
                     Vector3 size = new Vector3(mapData.resolution, voxelData.height, mapData.resolution);
                     Gizmos.DrawWireCube(mapData.origin + voxelData.position + Vector3.up*size.y*0.5f, size);
                 }
+                */
+                VoxelData pillarData = _target.GetPillar(x, z).pillarData;
+                Vector3 size = new Vector3(mapData.resolution, pillarData.height, mapData.resolution);
+                Gizmos.DrawWireCube(mapData.origin + pillarData.position + Vector3.up * pillarData.height * 0.5f, size);
             }
         }
     }

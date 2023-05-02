@@ -84,6 +84,25 @@ namespace VoxelSystem
             _mapData.origin = (Vector3)(_originIndex) * _resolution;
         }
 
+        public float GetHeight(int x, int z)
+        {
+            if (x < 0 || x >= _size.x || z < 0 || z >= _size.z) return 0.0f;
+            return _pillars[x, z].pillarHeight;
+        }
+
+        public float GetHeightVerbose(Vector3 pos)
+        {
+            pos -= _mapData.origin;
+            pos.x /= _resolution;
+            pos.z /= _resolution;
+            int x = Mathf.FloorToInt(pos.x);
+            int z = Mathf.FloorToInt(pos.z);
+            float dx = pos.x - x;
+            float dz = pos.z - z;
+            float h = (GetHeight(x, z) * (1.0f - dz) + GetHeight(x, z + 1) * dz) * (1.0f - dx) + (GetHeight(x + 1, z) * (1.0f - dz) + GetHeight(x + 1, z + 1) * dz) * dx;
+            return h + _mapData.origin.y;
+        }
+
         public VoxelPillar GetPillar(int x, int z)
         {
             if (x < 0 || _size.x <= x || z < 0 || _size.z <= z) return null;
@@ -100,6 +119,13 @@ namespace VoxelSystem
         {
             if (x < 0 || _size.x <= x || z < 0 || _size.z <= z) return null;
             return _pillars[x, z].GetVoxel(y);
+        }
+
+        public Vector3 IndexToPosition(int x, int z)
+        {
+            float x_pos = (x + _originIndex.x) * _resolution;
+            float z_pos = (z + _originIndex.z) * _resolution;
+            return new Vector3(x_pos, 0.0f, z_pos);
         }
     }
 }

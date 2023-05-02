@@ -13,6 +13,7 @@ public class TransformVelocity : MonoBehaviour
 
     public Vector3 position { get => _position; }
     public Vector3 velocity { get => _velocity; }
+    public Vector3 direction { get => _velocity.normalized; }
 
     private void Awake()
     {
