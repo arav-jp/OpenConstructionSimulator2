@@ -9,6 +9,8 @@ public class ActiveZone : MonoBehaviour
     [SerializeField]
     private PlaneZone _planeZone;
     [SerializeField]
+    private Zone _collisionZone;
+    [SerializeField]
     private Transform _topEdge;
     [SerializeField]
     private Transform _cuttingEdge;
@@ -32,7 +34,11 @@ public class ActiveZone : MonoBehaviour
 
     public bool IsPointInZone(Vector3 point)
     {
-        return _planeZone.IsPointInZone(point);
+        if (_planeZone.IsPointInZone(point) || _collisionZone.IsPointInZone(point))
+        {
+            return true;
+        }
+        return false;
     }
 
     public float GetSurfaceHeight(Vector3 point)
