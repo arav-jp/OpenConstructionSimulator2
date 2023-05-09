@@ -51,4 +51,12 @@ public class SoilManager : MonoBehaviour
             break;
         }
     }
+
+    public void SetVoxelTerrain(VoxelSystem.VoxelTerrain voxelTerrain)
+    {
+        foreach(Soil soil in _soils)
+        {
+            soil.SetVoxelTerrain(voxelTerrain);
+        }
+    }
 }

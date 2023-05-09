@@ -16,6 +16,7 @@ public class Soil : MonoBehaviour
     private float _diameter;
 
     private SoilManager _manager;
+    private VoxelSystem.VoxelTerrain _voxelTerrain;
     private Zone _zone;
     private Transform _transform;
     private GameObject _gameObject;
@@ -51,6 +52,10 @@ public class Soil : MonoBehaviour
         }
         if(time_now - _timer > _lifeTime)
         {
+            if (_voxelTerrain)
+            {
+                _voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
+            }
             Inactivate();
         }
     }
@@ -58,6 +63,7 @@ public class Soil : MonoBehaviour
     public void Activate(Vector3 position, float volume)
     {
         _transform.position = position;
+        _volume = volume;
         _diameter = Mathf.Pow(volume * _v2d_coef, 1.0f / 3.0f);
         _transform.localScale = Vector3.one * _diameter;
         _gameObject.SetActive(true);
@@ -71,5 +77,10 @@ public class Soil : MonoBehaviour
     public bool IsActivated()
     {
         return _gameObject.activeSelf;
+    }
+
+    public void SetVoxelTerrain(VoxelSystem.VoxelTerrain voxelTerrain)
+    {
+        _voxelTerrain = voxelTerrain;
     }
 }

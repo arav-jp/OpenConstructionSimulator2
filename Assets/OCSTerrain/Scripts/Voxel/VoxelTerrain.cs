@@ -33,6 +33,7 @@ namespace VoxelSystem
         private void Start()
         {
             _hz_inv = 1.0f / _hz;
+            _soilManager.SetVoxelTerrain(this);
         }
 
         private void Update()
@@ -58,7 +59,7 @@ namespace VoxelSystem
                     float height_cutting = _excavator.activeZone.GetSurfaceHeight(surface);
                     if (height_cutting > surface.y) continue;
                     int index_start = (int)((height - mapData.origin.y) / mapData.resolution);
-                    int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution);
+                    int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution) + 1;
 
                     for (int y = index_start; y > index_end; y--)
                     {
@@ -72,6 +73,14 @@ namespace VoxelSystem
                     _voxelMap.GetPillar(x, z).SetHeight(height_cutting - mapData.origin.y);
                 }
             }
+        }
+
+        public void Depositting(Vector3 pos, float volume, float density)
+        {
+            VoxelMapData mapData = _voxelMap.mapData;
+            Vector3Int index = _voxelMap.PositionToIndex(pos.x, pos.z);
+            if (index.x < 0 || index.x > mapData.size.x || index.z < 0 || index.z > mapData.size.z) return;
+            _voxelMap.GetPillar(index.x, index.z).Depositting(volume, density);
         }
 
         private void Voxel2Terrain()

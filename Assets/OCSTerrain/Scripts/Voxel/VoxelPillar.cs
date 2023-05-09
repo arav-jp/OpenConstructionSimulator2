@@ -65,6 +65,20 @@ namespace VoxelSystem
             SetHeight(height, _density);
         }
 
+        public void Depositting(float volume, float density)
+        {
+            float height = volume / (_mapData.resolution * _mapData.resolution);
+            _pillarData.height = _pillarData.height + height;
+            for (int y = 0; y < _size; y++)
+            {
+                if (_voxels[y].isFilled) continue;
+                float h = Mathf.Clamp(height, 0, _mapData.resolution - _voxels[y].height);
+                _voxels[y].height = _voxels[y].height + h;
+                height -= h;
+                if (height <= 0.0f) break;
+            }
+        }
+
         public Voxel GetVoxel(int index)
         {
             if (index < 0 || index >= _size) return null;

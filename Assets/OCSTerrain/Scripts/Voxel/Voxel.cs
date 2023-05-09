@@ -10,9 +10,11 @@ namespace VoxelSystem
         private VoxelData _voxelData;
 
         private float _resolution { get => _mapData.resolution; }
-        public VoxelData voxelData { get => _voxelData; }
+        public VoxelData voxelData { get => _voxelData; set => _voxelData = value; }
         public float height { get => _voxelData.height; set => _voxelData.height = value; }
         public float density { get => _voxelData.density; set => _voxelData.density = value; }
+
+        public bool isFilled { get => (_voxelData.height >= _mapData.resolution ? true : false); }
 
         public Voxel(VoxelMapData mapData, Vector3Int index)
         {
@@ -22,7 +24,7 @@ namespace VoxelSystem
 
         public void Awake()
         {
-        
+            
         }
 
         public void Start()
