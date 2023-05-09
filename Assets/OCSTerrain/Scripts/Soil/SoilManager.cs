@@ -6,6 +6,8 @@ public class SoilManager : MonoBehaviour
 {
     #region Inspector
     [SerializeField]
+    private Zone _particleZone;
+    [SerializeField]
     private GameObject _soilObj;
     [SerializeField]
     private int _soilNum;
@@ -35,7 +37,7 @@ public class SoilManager : MonoBehaviour
             var soil_obj = Instantiate(_soilObj);
             soil_obj.transform.parent = _transform;
             _soils[i] = soil_obj.GetComponent<Soil>();
-            _soils[i].Init(this);
+            _soils[i].Init(this, _particleZone);
             _soils[i].Inactivate();
         }
     }
