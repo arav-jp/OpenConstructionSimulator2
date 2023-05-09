@@ -10,6 +10,9 @@ public class Soil : MonoBehaviour
     [SerializeField]
     private float _lifeTime;
 
+    [SerializeField]
+    private float _maxVelocity;
+
     [SerializeField, ReadOnly]
     private float _volume;
     [SerializeField, ReadOnly]
@@ -40,6 +43,7 @@ public class Soil : MonoBehaviour
     private void Start()
     {
         _transform.localScale = Vector3.one * _diameter;
+        _rb.maxDepenetrationVelocity = _maxVelocity;
     }
 
     private void Update()
