@@ -59,7 +59,7 @@ namespace VoxelSystem
                     float height_cutting = _excavator.activeZone.GetSurfaceHeight(surface);
                     if (height_cutting > surface.y) continue;
                     int index_start = (int)((height - mapData.origin.y) / mapData.resolution);
-                    int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution) + 1;
+                    int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution);
 
                     for (int y = index_start; y > index_end; y--)
                     {
