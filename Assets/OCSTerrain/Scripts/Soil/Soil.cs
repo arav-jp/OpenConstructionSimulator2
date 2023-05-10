@@ -58,7 +58,7 @@ public class Soil : MonoBehaviour
         {
             if (_voxelTerrain)
             {
-                //_voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
+                _voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
             }
             Inactivate();
         }

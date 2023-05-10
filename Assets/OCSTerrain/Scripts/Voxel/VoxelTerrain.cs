@@ -79,7 +79,7 @@ namespace VoxelSystem
         {
             VoxelMapData mapData = _voxelMap.mapData;
             Vector3Int index = _voxelMap.PositionToIndex(pos.x, pos.z);
-            if (index.x < 0 || index.x > mapData.size.x || index.z < 0 || index.z > mapData.size.z) return;
+            if (index.x < 0 || index.x >= mapData.size.x || index.z < 0 || index.z >= mapData.size.z) return;
             _voxelMap.GetPillar(index.x, index.z).Depositting(volume, density);
         }
 
