@@ -13,6 +13,12 @@ public class Excavator : MonoBehaviour
     private ActiveZone _activeZone;
 
     [SerializeField]
+    private Transform _originOffsetDirection;
+
+    [SerializeField]
+    private float _originOffset;
+
+    [SerializeField]
     private float _height_min;
     [SerializeField]
     private float _height_max;
@@ -53,7 +59,7 @@ public class Excavator : MonoBehaviour
     {
         if (other.tag != "Terrain") return;
 
-        Vector3 origin = new Vector3(_transform.position.x, _height_max, _transform.position.z);
+        Vector3 origin = new Vector3(_transform.position.x, _height_max, _transform.position.z) - _originOffsetDirection.forward * _originOffset;
         Ray ray = new Ray(origin, Vector3.down);
         RaycastHit hit;
 
