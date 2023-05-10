@@ -56,10 +56,6 @@ public class Soil : MonoBehaviour
         }
         if(time_now - _timer > _lifeTime)
         {
-            if (_voxelTerrain)
-            {
-                _voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
-            }
             Inactivate();
         }
     }
@@ -79,6 +75,10 @@ public class Soil : MonoBehaviour
 
     public void Inactivate()
     {
+        if (_voxelTerrain)
+        {
+            _voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
+        }
         _gameObject.SetActive(false);
     }
 

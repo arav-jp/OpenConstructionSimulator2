@@ -151,6 +151,7 @@ namespace VoxelSystem
             if (!_activated) return;
             Voxel2Terrain();
             _voxelMap.Inactivate();
+            _soilManager.Inactivate();
             _activated = false;
         }
 

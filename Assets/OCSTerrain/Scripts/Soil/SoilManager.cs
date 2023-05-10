@@ -59,4 +59,12 @@ public class SoilManager : MonoBehaviour
             soil.SetVoxelTerrain(voxelTerrain);
         }
     }
+
+    public void Inactivate()
+    {
+        foreach (Soil soil in _soils)
+        {
+            soil.Inactivate();
+        }
+    }
 }
