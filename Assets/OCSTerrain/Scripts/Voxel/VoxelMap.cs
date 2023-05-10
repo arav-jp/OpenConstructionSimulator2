@@ -121,11 +121,18 @@ namespace VoxelSystem
             return _pillars[x, z].GetVoxel(y);
         }
 
-        public Vector3 IndexToPosition(int x, int z)
+        public Vector3 IndexToPosition(int x_index, int z_index)
         {
-            float x_pos = (x + _originIndex.x) * _resolution;
-            float z_pos = (z + _originIndex.z) * _resolution;
+            float x_pos = (x_index + _originIndex.x) * _resolution;
+            float z_pos = (z_index + _originIndex.z) * _resolution;
             return new Vector3(x_pos, 0.0f, z_pos);
+        }
+
+        public Vector3Int PositionToIndex(float x_pos, float z_pos)
+        {
+            int x_index = Mathf.RoundToInt(x_pos / _resolution) - _originIndex.x;
+            int z_index = Mathf.RoundToInt(z_pos / _resolution) - _originIndex.z;
+            return new Vector3Int(x_index, 0, z_index);
         }
     }
 }

@@ -8,6 +8,10 @@ namespace VoxelSystem
     {
         [SerializeField]
         private TerrainManager _terrainManager;
+
+        [SerializeField]
+        private SoilManager _soilManager;
+
         [SerializeField]
         private Excavator _excavator;
         [SerializeField]
@@ -29,6 +33,7 @@ namespace VoxelSystem
         private void Start()
         {
             _hz_inv = 1.0f / _hz;
+            _soilManager.SetVoxelTerrain(this);
         }
 
         private void Update()
@@ -45,27 +50,37 @@ namespace VoxelSystem
         {
             VoxelMapData mapData = _voxelMap.mapData;
             for (int x = 0; x < mapData.size.x; x++)
+            {
                 for (int z = 0; z < mapData.size.z; z++)
                 {
                     float height = _voxelMap.GetPillar(x, z).pillarHeight + mapData.origin.y;
-                    Vector3 pos = _voxelMap.IndexToPosition(x, z) + Vector3.up * height;
-                    if (!_excavator.activeZone.IsPointInZone(pos)) continue;
-                    float height_cutting = _excavator.activeZone.GetSurfaceHeight(pos);
-                    if (height_cutting > pos.y) continue;
-                    int index_start = (int)(height / mapData.resolution) + 1;
-                    int index_end = (int)(height_cutting / mapData.resolution);
+                    Vector3 surface = _voxelMap.IndexToPosition(x, z) + Vector3.up * height;
+                    if (!_excavator.activeZone.IsPointInZone(surface)) continue;
+                    float height_cutting = _excavator.activeZone.GetSurfaceHeight(surface);
+                    if (height_cutting > surface.y) continue;
+                    int index_start = (int)((height - mapData.origin.y) / mapData.resolution);
+                    int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution);
+
                     for (int y = index_start; y > index_end; y--)
                     {
                         if (y < 0 || y >= mapData.size.y) continue;
-                        /*
-                        if (_voxelMap..volume_max == 0.0f) continue;
-                        var obj = Instantiate(_soilObj, _voxels.GetPosition(x, z) + Vector3.up * y * _voxels.resolution, Quaternion.identity);
-                        obj.GetComponent<Soil>().Init(_bucket, _voxels, _voxels.pillars[x, z].voxels[y].volume_max, _voxels.pillars[x, z].voxels[y].density);
-                        _voxels.pillars[x, z].voxels[y].Digged();
-                        */
+                        Voxel voxel = _voxelMap.GetVoxel(x, y, z);
+                        Vector3 voxelPosition = voxel.voxelData.position + mapData.origin;
+                        if (voxelPosition.y < height_cutting) continue;
+                        _soilManager.Spawn(voxelPosition, mapData.resolution * mapData.resolution * mapData.resolution);
                     }
+
                     _voxelMap.GetPillar(x, z).SetHeight(height_cutting - mapData.origin.y);
                 }
+            }
+        }
+
+        public void Depositting(Vector3 pos, float volume, float density)
+        {
+            VoxelMapData mapData = _voxelMap.mapData;
+            Vector3Int index = _voxelMap.PositionToIndex(pos.x, pos.z);
+            if (index.x < 0 || index.x >= mapData.size.x || index.z < 0 || index.z >= mapData.size.z) return;
+            _voxelMap.GetPillar(index.x, index.z).Depositting(volume, density);
         }
 
         private void Voxel2Terrain()
@@ -136,12 +151,13 @@ namespace VoxelSystem
             if (!_activated) return;
             Voxel2Terrain();
             _voxelMap.Inactivate();
+            _soilManager.Inactivate();
             _activated = false;
         }
 
-        public void SetTargetTerrain(TerrainManager terrain)
+        public void SetTargetTerrain(TerrainManager terrainManager)
         {
-            _terrainManager = terrain;
+            _terrainManager = terrainManager;
         }
     }
 }
