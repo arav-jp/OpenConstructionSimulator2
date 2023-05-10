@@ -58,7 +58,7 @@ public class Soil : MonoBehaviour
         {
             if (_voxelTerrain)
             {
-                _voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
+                //_voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
             }
             Inactivate();
         }
@@ -70,6 +70,10 @@ public class Soil : MonoBehaviour
         _volume = volume;
         _diameter = Mathf.Pow(volume * _v2d_coef, 1.0f / 3.0f);
         _transform.localScale = Vector3.one * _diameter;
+
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
+
         _gameObject.SetActive(true);
     }
 
