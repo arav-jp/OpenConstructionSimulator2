@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Terrain
+  - Bucket
+  - Soil
+  - Machine
   layers:
   - Default
   - TransparentFX
@@ -11,11 +15,11 @@ TagManager:
   - 
   - Water
   - UI
+  - Terrain
+  - Vehicle
   - 
-  - 
-  - 
-  - 
-  - 
+  - Soil
+  - Bucket
   - 
   - 
   - 
