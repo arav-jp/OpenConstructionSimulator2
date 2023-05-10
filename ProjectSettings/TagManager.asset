@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Terrain
+  - Bucket
+  - Soil
+  - Machine
   layers:
   - Default
   - TransparentFX
