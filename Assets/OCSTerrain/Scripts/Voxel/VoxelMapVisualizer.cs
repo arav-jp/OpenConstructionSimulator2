@@ -14,6 +14,9 @@ public class VoxelMapVisualizer : Visualizer<VoxelMap>
     [SerializeField]
     private VoxelMapVisualizeMode _mode;
 
+    [SerializeField]
+    private Gradient _densityGradient;
+
     protected override void Visualize()
     {
         if (!_target.activated) return;
@@ -30,6 +33,9 @@ public class VoxelMapVisualizer : Visualizer<VoxelMap>
                         {
                             VoxelData voxelData = _target.GetVoxel(x, y, z).voxelData;
                             if (voxelData.volume <= 0.0f) break;
+
+                            Gizmos.color = _densityGradient.Evaluate(Mathf.InverseLerp(mapData.minDensity, mapData.maxDensity, voxelData.density));
+
                             Vector3 size_voxel = new Vector3(mapData.resolution, voxelData.height, mapData.resolution);
                             Gizmos.DrawWireCube(mapData.origin + voxelData.position + Vector3.up * size_voxel.y * 0.5f, size_voxel);
                         }

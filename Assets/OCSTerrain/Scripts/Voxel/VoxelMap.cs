@@ -9,6 +9,8 @@ namespace VoxelSystem
     {
         public float resolution;    // [m/cell]
         public Vector3Int size;     // [cell]
+        public float minDensity;
+        public float maxDensity;
         [ReadOnly]
         public Vector3 origin;      // [m]
         [ReadOnly]
