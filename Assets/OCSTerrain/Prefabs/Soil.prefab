@@ -66,6 +66,9 @@ MonoBehaviour:
   _maxVelocity: 10
   _volume: 0
   _diameter: 0
+  _terrainLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &4176872291527154142
 GameObject:
   m_ObjectHideFlags: 0

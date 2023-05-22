@@ -18,6 +18,9 @@ public class Soil : MonoBehaviour
     [SerializeField, ReadOnly]
     private float _diameter;
 
+    [SerializeField]
+    private LayerMask _terrainLayer;
+
     private SoilManager _manager;
     private VoxelSystem.VoxelTerrain _voxelTerrain;
     private Zone _zone;
@@ -71,6 +74,12 @@ public class Soil : MonoBehaviour
         _rb.angularVelocity = Vector3.zero;
 
         _gameObject.SetActive(true);
+
+        Ray ray = new Ray(_transform.position - Vector3.down * _diameter * 0.5f, Vector3.down);
+        if(!Physics.Raycast(ray, 10.0f, _terrainLayer))
+        {
+            Inactivate();
+        }
     }
 
     public void Inactivate()
