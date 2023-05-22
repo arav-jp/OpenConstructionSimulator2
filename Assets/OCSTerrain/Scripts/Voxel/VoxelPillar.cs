@@ -72,9 +72,17 @@ namespace VoxelSystem
             for (int y = 0; y < _size; y++)
             {
                 if (_voxels[y].isFilled) continue;
-                float h = Mathf.Clamp(height, 0, _mapData.resolution - _voxels[y].height);
-                _voxels[y].height = _voxels[y].height + h;
-                height -= h;
+                float dH = Mathf.Clamp(height, 0, _mapData.resolution - _voxels[y].height);
+                float dM = dH * density;
+
+                float vH = _voxels[y].height;
+                float vM = vH * _voxels[y].density;
+                vH += dH;
+                vM += dM;
+
+                _voxels[y].Set(vH, vH/vM);
+
+                height -= dH;
                 if (height <= 0.0f) break;
             }
         }
