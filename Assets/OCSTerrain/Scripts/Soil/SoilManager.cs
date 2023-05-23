@@ -42,12 +42,12 @@ public class SoilManager : MonoBehaviour
         }
     }
 
-    public void Spawn(Vector3 position, float volume)
+    public void Spawn(Vector3 position, float volume, float density)
     {
         foreach(Soil soil in _soils)
         {
             if (soil.IsActivated()) continue;
-            soil.Activate(position, volume);
+            soil.Activate(position, volume, density);
             break;
         }
     }
