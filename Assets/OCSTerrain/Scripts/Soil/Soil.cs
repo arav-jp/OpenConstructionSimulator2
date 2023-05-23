@@ -16,7 +16,12 @@ public class Soil : MonoBehaviour
     [SerializeField, ReadOnly]
     private float _volume;
     [SerializeField, ReadOnly]
+    private float _density;
+    [SerializeField, ReadOnly]
     private float _diameter;
+
+    [SerializeField]
+    private LayerMask _terrainLayer;
 
     private SoilManager _manager;
     private VoxelSystem.VoxelTerrain _voxelTerrain;
@@ -60,24 +65,32 @@ public class Soil : MonoBehaviour
         }
     }
 
-    public void Activate(Vector3 position, float volume)
+    public void Activate(Vector3 position, float volume, float density)
     {
         _transform.position = position;
         _volume = volume;
+        _density = density;
         _diameter = Mathf.Pow(volume * _v2d_coef, 1.0f / 3.0f);
         _transform.localScale = Vector3.one * _diameter;
 
+        _rb.mass = _volume * _density;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
 
         _gameObject.SetActive(true);
+
+        Ray ray = new Ray(_transform.position - Vector3.down * _diameter * 0.5f, Vector3.down);
+        if(!Physics.Raycast(ray, 10.0f, _terrainLayer))
+        {
+            Inactivate();
+        }
     }
 
     public void Inactivate()
     {
         if (_voxelTerrain)
         {
-            _voxelTerrain.Depositting(_transform.position, _volume, 2700.0f);
+            _voxelTerrain.Depositting(_transform.position, _volume, _density);
         }
         _gameObject.SetActive(false);
     }

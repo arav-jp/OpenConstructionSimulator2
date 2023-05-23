@@ -58,6 +58,7 @@ public class Excavator : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Terrain") return;
+        _voxelTerrain.Inactivate();
 
         Vector3 origin = new Vector3(_transform.position.x, _height_max, _transform.position.z) - _originOffsetDirection.forward * _originOffset;
         Ray ray = new Ray(origin, Vector3.down);

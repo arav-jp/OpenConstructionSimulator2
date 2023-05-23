@@ -26,6 +26,11 @@ namespace VoxelSystem
         [SerializeField]
         private float _hz;
 
+        [SerializeField]
+        private bool _cutting = true;
+        [SerializeField]
+        private bool _voxel2terrain = true;
+
         private float _hz_inv;
         private float _time_old;
         private bool _activated = false;
@@ -42,8 +47,8 @@ namespace VoxelSystem
             float time_now = Time.time;
             if (time_now - _time_old < _hz_inv) return;
             _time_old = time_now;
-            Cutting();
-            Voxel2Terrain();
+            if(_cutting) Cutting();
+            if(_voxel2terrain) Voxel2Terrain();
         }
 
         private void Cutting()
@@ -67,7 +72,7 @@ namespace VoxelSystem
                         Voxel voxel = _voxelMap.GetVoxel(x, y, z);
                         Vector3 voxelPosition = voxel.voxelData.position + mapData.origin;
                         if (voxelPosition.y < height_cutting) continue;
-                        _soilManager.Spawn(voxelPosition, mapData.resolution * mapData.resolution * mapData.resolution);
+                        _soilManager.Spawn(voxelPosition, mapData.resolution * mapData.resolution * mapData.resolution, voxel.voxelData.density);
                     }
 
                     _voxelMap.GetPillar(x, z).SetHeight(height_cutting - mapData.origin.y);
@@ -124,7 +129,6 @@ namespace VoxelSystem
                     Vector3 rayOrigin = mapData.origin + pillar.pillarData.position;
                     Ray ray = new Ray(rayOrigin + Vector3.up * _terrainManager.terrainSize.y, Vector3.down);
                     RaycastHit hit;
-
                     float height = 0.0f;
                     if (Physics.Raycast(ray, out hit, _terrainManager.terrainSize.y, _terrainLayer))
                     {
@@ -138,6 +142,7 @@ namespace VoxelSystem
         public void Activate(Vector3 origin)
         {
             origin += _offset;
+
             _voxelMap.SetOrigin(origin);
 
             Terrain2Voxel();
