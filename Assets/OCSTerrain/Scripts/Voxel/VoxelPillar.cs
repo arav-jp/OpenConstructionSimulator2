@@ -80,7 +80,7 @@ namespace VoxelSystem
                 vH += dH;
                 vM += dM;
 
-                _voxels[y].Set(vH, vH/vM);
+                _voxels[y].Set(vH, vM/vH);
 
                 height -= dH;
                 if (height <= 0.0f) break;
