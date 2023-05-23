@@ -350,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075666881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3, z: 5}
+  m_LocalPosition: {x: 5, y: 4, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -407,7 +407,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -432,8 +432,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080789116}
-  m_LocalRotation: {x: 0.3842344, y: 0.28032103, z: -0.123673886, w: 0.8709127}
-  m_LocalPosition: {x: -5.537022, y: 8.530749, z: -7.7586026}
+  m_LocalRotation: {x: 0.29428858, y: 0.3317802, z: -0.10976328, w: 0.8895325}
+  m_LocalPosition: {x: -2.5124907, y: 7.7019963, z: -4.0571713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -609,9 +609,9 @@ MonoBehaviour:
   _terrain: {fileID: 907129490}
   _soilManager: {fileID: 1174565269}
   _spawnPosition: {fileID: 180210944}
-  _volume: 0.125
-  _density: 2700
-  _intervalTime: 1
+  _volume: 0.0125
+  _density: 2600
+  _intervalTime: 0.1
 --- !u!4 &1738391479
 Transform:
   m_ObjectHideFlags: 0
