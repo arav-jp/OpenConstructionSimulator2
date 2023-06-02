@@ -64,7 +64,8 @@ public class SoilManager : MonoBehaviour
     {
         foreach (Soil soil in _soils)
         {
-            soil.Inactivate();
+            if(!_particleZone.IsPointInZone(soil.transform.position))
+                soil.Inactivate();
         }
     }
 }

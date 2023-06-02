@@ -154,9 +154,9 @@ namespace VoxelSystem
         public void Inactivate()
         {
             if (!_activated) return;
-            Voxel2Terrain();
             _voxelMap.Inactivate();
             _soilManager.Inactivate();
+            Voxel2Terrain();
             _activated = false;
         }
 
