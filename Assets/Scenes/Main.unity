@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &17813261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  output: 0
-  _T: 0.2
-  _output_min: -30
-  _output_max: 30
 --- !u!1 &18678450
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,23 +248,6 @@ MonoBehaviour:
   - {fileID: 975743192}
   - {fileID: 2030534873}
   - {fileID: 1163573166}
---- !u!114 &49420879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  output: 0
-  _T: 0.1
-  _output_min: -30
-  _output_max: 30
 --- !u!1 &73837774
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +278,19 @@ Transform:
   m_Father: {fileID: 2123202921}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89126993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
+  m_Name: UnityInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
 --- !u!1 &99233188
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +321,23 @@ Transform:
   m_Father: {fileID: 925835066}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &119027049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  output: 0
+  _T: 0.2
+  _output_min: -20
+  _output_max: 20
 --- !u!114 &120684069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,32 +505,6 @@ MonoBehaviour:
   _T: 0.5
   _output_min: -20
   _output_max: 0
---- !u!114 &224718670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
-  m_Name: UnityInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
---- !u!114 &261732870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
-  m_Name: UnityInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
 --- !u!1 &263260338
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +535,23 @@ Transform:
   m_Father: {fileID: 2123202921}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &326085540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d507cc85026eb4bb4ebf0ca7d22715, type: 3}
+  m_Name: WheelColliderOutput(Clone)
+  m_EditorClassIdentifier: 
+  output: 0
+  _torqueCoef: 20
+  _maxTorque: 20
+  _brakeTorque: 50
+  _brakeThreshold: 0.01
 --- !u!1 &340382865
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfec6ba3d129f744182d718876b5d9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 1
+  _radius: 0.8
 --- !u!4 &340382867
 Transform:
   m_ObjectHideFlags: 0
@@ -609,6 +596,23 @@ Transform:
   m_Father: {fileID: 1098739510}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &354164516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d507cc85026eb4bb4ebf0ca7d22715, type: 3}
+  m_Name: WheelColliderOutput(Clone)
+  m_EditorClassIdentifier: 
+  output: 0
+  _torqueCoef: 20
+  _maxTorque: 20
+  _brakeTorque: 10
+  _brakeThreshold: 0.01
 --- !u!1 &379627621
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +675,27 @@ MonoBehaviour:
   _terrainLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &445191663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
+  m_Name: RotationalJointOutput(Clone)
+  m_EditorClassIdentifier: 
+  output: 0
+  _controlType: 1
+  _axis: {x: 1, y: 0, z: 0}
+  _angularVelocity_min: -30
+  _angularVelocity_max: 30
+  _angle_limit: 1
+  _angle_init: 39.396
+  _angle_min: 0
+  _angle_max: 60
 --- !u!1 &467561372
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +756,44 @@ Transform:
   m_Father: {fileID: 1060530270}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &494182820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
+  m_Name: RotationalJointOutput(Clone)
+  m_EditorClassIdentifier: 
+  output: 0
+  _controlType: 1
+  _axis: {x: 1, y: 0, z: 0}
+  _angularVelocity_min: -10
+  _angularVelocity_max: 10
+  _angle_limit: 1
+  _angle_init: -17.5
+  _angle_min: -40
+  _angle_max: 15
+--- !u!114 &505473129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  output: 0
+  _T: 0.05
+  _output_min: -1
+  _output_max: 1
 --- !u!1 &507113514
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,27 +997,6 @@ Transform:
   m_Father: {fileID: 863743327}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &790745517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
-  m_Name: RotationalJointOutput(Clone)
-  m_EditorClassIdentifier: 
-  output: 0
-  _controlType: 1
-  _axis: {x: 1, y: 0, z: 0}
-  _angularVelocity_min: -10
-  _angularVelocity_max: 10
-  _angle_limit: 1
-  _angle_init: -17.5
-  _angle_min: -40
-  _angle_max: 15
 --- !u!1 &813730394
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +1027,23 @@ Transform:
   m_Father: {fileID: 2123202921}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &814046184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  output: 0
+  _T: 0.2
+  _output_min: -10
+  _output_max: 10
 --- !u!1 &825337953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,19 +1074,6 @@ Transform:
   m_Father: {fileID: 863743327}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &861640035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
-  m_Name: UnityInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
 --- !u!1 &863743326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,23 +1129,6 @@ MonoBehaviour:
   - {fileID: 727580942}
   - {fileID: 825337954}
   - {fileID: 545562458}
---- !u!114 &864726417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  output: 0
-  _T: 0.2
-  _output_min: -20
-  _output_max: 20
 --- !u!1 &895173753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,40 +1159,6 @@ Transform:
   m_Father: {fileID: 1960278420}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &903063173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
-  m_Name: RotationalJointOutput(Clone)
-  m_EditorClassIdentifier: 
-  output: 0
-  _controlType: 1
-  _axis: {x: 1, y: 0, z: 0}
-  _angularVelocity_min: -30
-  _angularVelocity_max: 30
-  _angle_limit: 1
-  _angle_init: 39.396
-  _angle_min: 0
-  _angle_max: 60
---- !u!114 &910572626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
-  m_Name: UnityInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
 --- !u!1 &923544802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,23 +1292,6 @@ Transform:
   m_Father: {fileID: 40582165}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1016937583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  output: 0
-  _T: 0.2
-  _output_min: -10
-  _output_max: 10
 --- !u!1 &1054987346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e85c9d07e5013945a4a000ed5be3c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visualizeMode_edit: 2
+  _visualizeMode_edit: 1
   _visualizeMode_play: 2
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1060530272
@@ -1484,6 +1462,23 @@ Transform:
   m_Father: {fileID: 1060530270}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1142779227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  output: 0
+  _T: 0.05
+  _output_min: -1
+  _output_max: 1
 --- !u!1 &1159490832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,27 +1569,6 @@ Transform:
   m_Father: {fileID: 2123202921}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1209959992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
-  m_Name: RotationalJointOutput(Clone)
-  m_EditorClassIdentifier: 
-  output: 0
-  _controlType: 1
-  _axis: {x: 0, y: 1, z: 0}
-  _angularVelocity_min: -30
-  _angularVelocity_max: 30
-  _angle_limit: 0
-  _angle_init: 0
-  _angle_min: 0
-  _angle_max: 0
 --- !u!114 &1218740594 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 984498083, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
@@ -1615,7 +1589,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67546701973920747, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 67546701973920749, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: m_RootOrder
@@ -1872,6 +1846,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 67546701973920749, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
   m_PrefabInstance: {fileID: 1224767134}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1236373733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
+  m_Name: UnityInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
 --- !u!1 &1267349136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1889,20 @@ Transform:
   m_Father: {fileID: 2112564414}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287987098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a654b99eef15606439090ea4509e7499, type: 3}
+  m_Name: InspectorInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  _inputValue: 0
 --- !u!1 &1291463496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2011,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369079593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  output: 0
+  _T: 0.2
+  _output_min: -30
+  _output_max: 30
+--- !u!114 &1378030948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
+  m_Name: FirstOrderLag(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+  output: 0
+  _T: 0.1
+  _output_min: -30
+  _output_max: 30
 --- !u!1 &1380484492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1053377782090743510, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
@@ -2084,6 +2119,8 @@ MonoBehaviour:
     m_Bits: 64
   _offset: {x: -2, y: -1, z: -2}
   _hz: 10
+  _cutting: 1
+  _voxel2terrain: 1
 --- !u!114 &1434467313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,6 +2136,8 @@ MonoBehaviour:
   _mapData:
     resolution: 0.08
     size: {x: 50, y: 40, z: 50}
+    minDensity: 0
+    maxDensity: 0
     origin: {x: 0, y: 0, z: 0}
     originIndex: {x: 0, y: 0, z: 0}
 --- !u!114 &1434467314
@@ -2117,6 +2156,35 @@ MonoBehaviour:
   _visualizeMode_play: 2
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
   _mode: 1
+  _densityGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!114 &1434467315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2262,6 +2330,32 @@ Transform:
   m_Father: {fileID: 925835066}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1479797479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
+  m_Name: UnityInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+--- !u!114 &1481789632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
+  m_Name: UnityInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
 --- !u!1 &1500998289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6381698484013314858, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
@@ -2311,36 +2405,6 @@ Transform:
   m_Father: {fileID: 2112564414}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1546201602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
-  m_Name: UnityInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
---- !u!114 &1572665752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  output: 0
-  _T: 0.05
-  _output_min: -1
-  _output_max: 1
 --- !u!1 &1573310396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,23 +2435,6 @@ Transform:
   m_Father: {fileID: 2123202921}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1593421362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aedfb98b320e00f4295cd36091777d82, type: 3}
-  m_Name: FirstOrderLag(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  output: 0
-  _T: 0.05
-  _output_min: -1
-  _output_max: 1
 --- !u!1 &1604504590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,42 +2465,7 @@ Transform:
   m_Father: {fileID: 1060530270}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1618574010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
-  m_Name: RotationalJointOutput(Clone)
-  m_EditorClassIdentifier: 
-  output: 0
-  _controlType: 1
-  _axis: {x: 1, y: 0, z: 0}
-  _angularVelocity_min: -20
-  _angularVelocity_max: 20
-  _angle_limit: 1
-  _angle_init: 115.8
-  _angle_min: 40
-  _angle_max: 150
 --- !u!114 &1633562397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a654b99eef15606439090ea4509e7499, type: 3}
-  m_Name: InspectorInput(Clone)
-  m_EditorClassIdentifier: 
-  input: 0
-  _inputValue: 0
---- !u!114 &1686967166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2527,6 +2539,27 @@ Transform:
   m_Father: {fileID: 2123202921}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716333856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
+  m_Name: RotationalJointOutput(Clone)
+  m_EditorClassIdentifier: 
+  output: 0
+  _controlType: 1
+  _axis: {x: 0, y: 1, z: 0}
+  _angularVelocity_min: -30
+  _angularVelocity_max: 30
+  _angle_limit: 0
+  _angle_init: 0
+  _angle_min: 0
+  _angle_max: 0
 --- !u!1 &1755892932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,23 +2639,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5889593372235224860, guid: bf89d457d6ff6d946a7f82243c24a326, type: 3}
---- !u!114 &1783551952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d507cc85026eb4bb4ebf0ca7d22715, type: 3}
-  m_Name: WheelColliderOutput(Clone)
-  m_EditorClassIdentifier: 
-  output: 0
-  _torqueCoef: 20
-  _maxTorque: 20
-  _brakeTorque: 10
-  _brakeThreshold: 0.01
 --- !u!1 &1808715148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +3060,40 @@ Transform:
   m_Father: {fileID: 925835066}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000481083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126cbca1290f3bf4e9995bd8fe98075b, type: 3}
+  m_Name: UnityInput(Clone)
+  m_EditorClassIdentifier: 
+  input: 0
+--- !u!114 &2006397610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9f39f295d2373408c10295e9d8ac0c, type: 3}
+  m_Name: RotationalJointOutput(Clone)
+  m_EditorClassIdentifier: 
+  output: 0
+  _controlType: 1
+  _axis: {x: 1, y: 0, z: 0}
+  _angularVelocity_min: -20
+  _angularVelocity_max: 20
+  _angle_limit: 1
+  _angle_init: 115.8
+  _angle_min: 40
+  _angle_max: 150
 --- !u!1 &2015411812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,23 +3214,6 @@ Transform:
   m_Father: {fileID: 863743327}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2054319640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d507cc85026eb4bb4ebf0ca7d22715, type: 3}
-  m_Name: WheelColliderOutput(Clone)
-  m_EditorClassIdentifier: 
-  output: 0
-  _torqueCoef: 20
-  _maxTorque: 20
-  _brakeTorque: 50
-  _brakeThreshold: 0.01
 --- !u!1 &2071832191
 GameObject:
   m_ObjectHideFlags: 0
