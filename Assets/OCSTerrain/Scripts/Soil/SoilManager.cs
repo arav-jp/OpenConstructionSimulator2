@@ -11,8 +11,6 @@ public class SoilManager : MonoBehaviour
     private GameObject _soilObj;
     [SerializeField]
     private int _soilNum;
-    [SerializeField]
-    private float _soilSize_min;
     #endregion
 
     #region Parameters
@@ -24,7 +22,6 @@ public class SoilManager : MonoBehaviour
     #endregion
 
     #region Properties
-    public float soilSize_min { get => _soilSize_min; }
     #endregion
 
     private void Awake()
