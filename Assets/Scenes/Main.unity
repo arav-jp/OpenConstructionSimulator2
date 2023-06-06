@@ -302,7 +302,6 @@ MonoBehaviour:
   _particleZone: {fileID: 2091818272}
   _soilObj: {fileID: 1948537230421870078, guid: c09a05f6649f36348afb1c44aa994cc9, type: 3}
   _soilNum: 1000
-  _soilSize_min: 1
 --- !u!4 &923544804
 Transform:
   m_ObjectHideFlags: 0
