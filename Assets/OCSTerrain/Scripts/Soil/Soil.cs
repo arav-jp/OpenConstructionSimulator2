@@ -88,6 +88,7 @@ public class Soil : MonoBehaviour
 
     public void Inactivate()
     {
+        if (!_gameObject.activeSelf) return;
         if (_voxelTerrain)
         {
             _voxelTerrain.Depositting(_transform.position, _volume, _density);
