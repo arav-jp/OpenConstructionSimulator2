@@ -145,7 +145,7 @@ namespace VoxelSystem
                     {
                         height = hit.point.y - mapData.origin.y;
                     }
-                    pillar.SetHeight(height, 2700.0f);
+                    pillar.SetHeight(height, 2650.0f);
                 }
             }
         }
