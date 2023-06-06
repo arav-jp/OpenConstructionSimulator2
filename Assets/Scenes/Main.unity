@@ -302,7 +302,6 @@ MonoBehaviour:
   _particleZone: {fileID: 2091818272}
   _soilObj: {fileID: 1948537230421870078, guid: c09a05f6649f36348afb1c44aa994cc9, type: 3}
   _soilNum: 1000
-  _soilSize_min: 1
 --- !u!4 &923544804
 Transform:
   m_ObjectHideFlags: 0
@@ -758,7 +757,7 @@ MonoBehaviour:
   _angle_limit: 1
   _angle_init: 39.396
   _angle_min: 0
-  _angle_max: 60
+  _angle_max: 70
 --- !u!114 &2066415689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,6 +935,10 @@ PrefabInstance:
       propertyPath: _input._scriptableObject
       value: 
       objectReference: {fileID: 1288285700}
+    - target: {fileID: 5429832038424776115, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: _output._parametersCache
+      value: '{"output":0.0,"_controlType":1,"_axis":{"x":1.0,"y":0.0,"z":0.0},"_angularVelocity_min":-30.0,"_angularVelocity_max":30.0,"_angle_limit":true,"_angle_init":39.395999908447269,"_angle_min":0.0,"_angle_max":70.0}'
+      objectReference: {fileID: 0}
     - target: {fileID: 5429832038424776115, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _output._scriptableObject
       value: 
