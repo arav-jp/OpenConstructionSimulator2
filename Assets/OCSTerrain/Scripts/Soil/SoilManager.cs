@@ -18,6 +18,9 @@ public class SoilManager : MonoBehaviour
     #region Parameters
     private Soil[] _soils;
     private Transform _transform;
+
+    private bool _inited = false;
+    VoxelSystem.VoxelTerrain _vt;
     #endregion
 
     #region Properties
@@ -28,6 +31,8 @@ public class SoilManager : MonoBehaviour
     {
         _transform = transform;
         _soils = new Soil[_soilNum];
+
+        _inited = false;
     }
 
     private void Start()
@@ -39,7 +44,10 @@ public class SoilManager : MonoBehaviour
             _soils[i] = soil_obj.GetComponent<Soil>();
             _soils[i].Init(this, _particleZone);
             _soils[i].Inactivate();
+            if (_vt) _soils[i].SetVoxelTerrain(_vt);
         }
+
+        _inited = true;
     }
 
     public void Spawn(Vector3 position, float volume, float density)
@@ -52,8 +60,11 @@ public class SoilManager : MonoBehaviour
         }
     }
 
+
     public void SetVoxelTerrain(VoxelSystem.VoxelTerrain voxelTerrain)
     {
+        _vt = voxelTerrain;
+        if (!_inited) return;
         foreach(Soil soil in _soils)
         {
             soil.SetVoxelTerrain(voxelTerrain);
