@@ -976,9 +976,29 @@ PrefabInstance:
       propertyPath: _transferFunction._scriptableObject
       value: 
       objectReference: {fileID: 360141996}
+    - target: {fileID: 5455365642931780936, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
+    - target: {fileID: 5455365643265821445, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
+    - target: {fileID: 5455365644046163675, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
     - target: {fileID: 5455365644122492862, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _soilManager
       value: 
       objectReference: {fileID: 923544803}
+    - target: {fileID: 5455365644193247710, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
+    - target: {fileID: 5455365644851043865, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}

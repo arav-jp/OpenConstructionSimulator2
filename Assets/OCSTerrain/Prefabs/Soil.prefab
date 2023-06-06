@@ -65,6 +65,7 @@ MonoBehaviour:
   _lifeTime: 1
   _maxVelocity: 10
   _volume: 0
+  _density: 0
   _diameter: 0
   _terrainLayer:
     serializedVersion: 2
@@ -173,7 +174,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4176872291527154142}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 56c29300562288b48927222d3010d4ab, type: 2}
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
