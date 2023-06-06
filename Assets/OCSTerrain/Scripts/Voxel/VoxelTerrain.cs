@@ -35,6 +35,8 @@ namespace VoxelSystem
         private float _time_old;
         private bool _activated = false;
 
+        public VoxelMapData mapData { get => _voxelMap.mapData; }
+
         private void Start()
         {
             _hz_inv = 1.0f / _hz;
@@ -53,7 +55,6 @@ namespace VoxelSystem
 
         private void Cutting()
         {
-            VoxelMapData mapData = _voxelMap.mapData;
             for (int x = 0; x < mapData.size.x; x++)
             {
                 for (int z = 0; z < mapData.size.z; z++)
@@ -82,7 +83,6 @@ namespace VoxelSystem
 
         public void Depositting(Vector3 pos, float volume, float density)
         {
-            VoxelMapData mapData = _voxelMap.mapData;
             Vector3Int index = _voxelMap.PositionToIndex(pos.x, pos.z);
             if (index.x < 0 || index.x >= mapData.size.x || index.z < 0 || index.z >= mapData.size.z) return;
             _voxelMap.GetPillar(index.x, index.z).Depositting(volume, density);
@@ -90,7 +90,6 @@ namespace VoxelSystem
 
         private void Voxel2Terrain()
         {
-            VoxelMapData mapData = _voxelMap.mapData;
             Vector3 start = mapData.origin;
             Vector3 end = start + (Vector3)(mapData.size) * mapData.resolution;
 
@@ -119,8 +118,6 @@ namespace VoxelSystem
 
         private void Terrain2Voxel()
         {
-            VoxelMapData mapData = _voxelMap.mapData;
-
             for (int x = 0; x < mapData.size.x; x++)
             {
                 for (int z = 0; z < mapData.size.z; z++)
@@ -154,9 +151,9 @@ namespace VoxelSystem
         public void Inactivate()
         {
             if (!_activated) return;
-            Voxel2Terrain();
             _voxelMap.Inactivate();
             _soilManager.Inactivate();
+            Voxel2Terrain();
             _activated = false;
         }
 
