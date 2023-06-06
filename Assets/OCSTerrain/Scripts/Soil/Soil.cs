@@ -98,6 +98,12 @@ public class Soil : MonoBehaviour
         _gameObject.SetActive(false);
     }
 
+    public void AddMass(float mass)
+    {
+        _rb.mass += mass;
+        _density = _rb.mass / _volume;
+    }
+
     public bool IsActivated()
     {
         return _gameObject.activeSelf;
