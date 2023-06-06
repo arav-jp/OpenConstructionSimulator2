@@ -24,7 +24,7 @@ public class Excavator : MonoBehaviour
     private float _height_max;
 
     [SerializeField]
-    private float _timeout;
+    private float _updateDistance;
 
     [SerializeField]
     private LayerMask _terrainLayer;
@@ -32,8 +32,10 @@ public class Excavator : MonoBehaviour
 
     #region Parameters
     private Transform _transform;
-    private float _time_start;
+    private TerrainManager _tm;
     private float _raycastRange;
+    private float _updateDistance_sqr;
+    private Vector3 _positioin_last;
     #endregion
 
     #region Properties
@@ -45,36 +47,46 @@ public class Excavator : MonoBehaviour
         _transform = transform;
     }
 
+    private void Start()
+    {
+        _raycastRange = _height_max - _height_min;
+
+        _updateDistance_sqr = _updateDistance * _updateDistance;
+    }
+
     private void Update()
     {
-        float time_now = Time.time;
-        if(time_now - _time_start > _timeout)
+        if (!_tm) return;
+        Vector3 position = _transform.position;
+        position.y = 0;
+        if ((position - _positioin_last).sqrMagnitude > _updateDistance_sqr)
         {
-            _voxelTerrain.Inactivate();
+            ActivateVoxelTerrain();
         }
-        _raycastRange = _height_max - _height_min;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Terrain") return;
+        _tm = other.GetComponent<TerrainManager>();
+        ActivateVoxelTerrain();
+    }
+
+    private void ActivateVoxelTerrain()
+    {
         _voxelTerrain.Inactivate();
 
         Vector3 origin = new Vector3(_transform.position.x, _height_max, _transform.position.z) - _originOffsetDirection.forward * _originOffset;
         Ray ray = new Ray(origin, Vector3.down);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, _raycastRange, _terrainLayer))
+        if (Physics.Raycast(ray, out hit, _raycastRange, _terrainLayer))
         {
-            TerrainManager tm = other.GetComponent<TerrainManager>();
-            if (tm) _voxelTerrain.SetTargetTerrain(tm);
+            if (_tm) _voxelTerrain.SetTargetTerrain(_tm);
             _voxelTerrain.Activate(hit.point);
         }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag != "Terrain") return;
-        _time_start = Time.time;
+        _positioin_last = _transform.position;
+        _positioin_last.y = 0;
     }
 }
