@@ -69,7 +69,7 @@ public class Soil : MonoBehaviour
     {
         _diameter = Mathf.Pow(volume * _v2d_coef, 1.0f / 3.0f);
 
-        Ray ray = new Ray(_transform.position - Vector3.down * _diameter * 0.5f, Vector3.down);
+        Ray ray = new Ray(position - Vector3.down * _diameter * 0.5f, Vector3.down);
         if (!Physics.Raycast(ray, 10.0f, _terrainLayer))
         {
             return false;
