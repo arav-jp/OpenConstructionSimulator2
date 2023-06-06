@@ -65,12 +65,19 @@ public class Soil : MonoBehaviour
         }
     }
 
-    public void Activate(Vector3 position, float volume, float density)
+    public bool Activate(Vector3 position, float volume, float density)
     {
+        _diameter = Mathf.Pow(volume * _v2d_coef, 1.0f / 3.0f);
+
+        Ray ray = new Ray(position - Vector3.down * _diameter * 0.5f, Vector3.down);
+        if (!Physics.Raycast(ray, 10.0f, _terrainLayer))
+        {
+            return false;
+        }
+
         _transform.position = position;
         _volume = volume;
         _density = density;
-        _diameter = Mathf.Pow(volume * _v2d_coef, 1.0f / 3.0f);
         _transform.localScale = Vector3.one * _diameter;
 
         _rb.mass = _volume * _density;
@@ -78,21 +85,23 @@ public class Soil : MonoBehaviour
         _rb.angularVelocity = Vector3.zero;
 
         _gameObject.SetActive(true);
-
-        Ray ray = new Ray(_transform.position - Vector3.down * _diameter * 0.5f, Vector3.down);
-        if(!Physics.Raycast(ray, 10.0f, _terrainLayer))
-        {
-            Inactivate();
-        }
+        return true;
     }
 
     public void Inactivate()
     {
+        if (!_gameObject.activeSelf) return;
         if (_voxelTerrain)
         {
             _voxelTerrain.Depositting(_transform.position, _volume, _density);
         }
         _gameObject.SetActive(false);
+    }
+
+    public void AddMass(float mass)
+    {
+        _rb.mass += mass;
+        _density = _rb.mass / _volume;
     }
 
     public bool IsActivated()

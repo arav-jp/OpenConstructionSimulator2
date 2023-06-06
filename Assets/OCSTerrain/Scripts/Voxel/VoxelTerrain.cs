@@ -67,13 +67,27 @@ namespace VoxelSystem
                     int index_start = (int)((height - mapData.origin.y) / mapData.resolution);
                     int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution);
 
+                    List<Soil> soils_spawned = new List<Soil>();
+                    float mass_spawnFailed = 0.0f;
+
                     for (int y = index_start; y > index_end; y--)
                     {
                         if (y < 0 || y >= mapData.size.y) continue;
                         Voxel voxel = _voxelMap.GetVoxel(x, y, z);
                         Vector3 voxelPosition = voxel.voxelData.position + mapData.origin;
                         if (voxelPosition.y < height_cutting) continue;
-                        _soilManager.Spawn(voxelPosition, mapData.resolution * mapData.resolution * mapData.resolution, voxel.voxelData.density);
+                        Soil soil = _soilManager.Spawn(voxelPosition, mapData.resolution * mapData.resolution * mapData.resolution, voxel.voxelData.density);
+                        if (soil) soils_spawned.Add(soil);
+                        else mass_spawnFailed += mapData.resolution * mapData.resolution * mapData.resolution * voxel.voxelData.density;
+                    }
+
+                    if(mass_spawnFailed > 0.0f && soils_spawned.Count > 0)
+                    {
+                        float mass = mass_spawnFailed / soils_spawned.Count;
+                        foreach(Soil soil in soils_spawned)
+                        {
+                            soil.AddMass(mass);
+                        }
                     }
 
                     _voxelMap.GetPillar(x, z).SetHeight(height_cutting - mapData.origin.y);
@@ -131,7 +145,7 @@ namespace VoxelSystem
                     {
                         height = hit.point.y - mapData.origin.y;
                     }
-                    pillar.SetHeight(height, 2700.0f);
+                    pillar.SetHeight(height, 2650.0f);
                 }
             }
         }
