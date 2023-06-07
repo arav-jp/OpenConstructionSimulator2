@@ -5,7 +5,7 @@
     "description": "",
     "unity": "2020.3",
     "dependencies": {
-        "com.arav.ocs-utility": "git+https://github.com/arav-jp/OpenConstructionSimulator2.git?path=/Assets/OCSUtility#new_structure"
+        "com.arav.ocs-utility": "git+https://github.com/arav-jp/OpenConstructionSimulator2?path=/Assets/OCSUtility#new_structure"
     },
     "keywords": [
         "ocs"
