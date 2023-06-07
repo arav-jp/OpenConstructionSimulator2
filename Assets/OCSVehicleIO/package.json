@@ -1,7 +1,7 @@
 {
-    "name": "com.arav.ocs-io",
+    "name": "com.arav.ocs-vehicle-io",
     "version": "0.1.1",
-    "displayName": "OCSIO",
+    "displayName": "OCSVehicleIO",
     "description": "",
     "unity": "2020.3",
     "dependencies": {
