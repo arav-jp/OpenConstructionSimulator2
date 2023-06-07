@@ -1,0 +1,12 @@
+{
+    "name": "com.arav.ocs-assets",
+    "version": "0.1.1",
+    "displayName": "OCSAssets",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+    },
+    "keywords": [
+        "ocs"
+    ]
+}
