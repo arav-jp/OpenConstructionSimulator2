@@ -867,10 +867,6 @@ PrefabInstance:
       propertyPath: _transferFunction._scriptableObject
       value: 
       objectReference: {fileID: 2066415689}
-    - target: {fileID: 5429832037843163451, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_Mass
-      value: 5000
-      objectReference: {fileID: 0}
     - target: {fileID: 5429832037843163453, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -936,10 +932,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1288285700}
     - target: {fileID: 5429832038424776115, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _output._parametersCache
-      value: '{"output":0.0,"_controlType":1,"_axis":{"x":1.0,"y":0.0,"z":0.0},"_angularVelocity_min":-30.0,"_angularVelocity_max":30.0,"_angle_limit":true,"_angle_init":39.395999908447269,"_angle_min":0.0,"_angle_max":70.0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 5429832038424776115, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _output._scriptableObject
       value: 
       objectReference: {fileID: 1963108114}
@@ -983,85 +975,9 @@ PrefabInstance:
       propertyPath: _transferFunction._scriptableObject
       value: 
       objectReference: {fileID: 360141996}
-    - target: {fileID: 5455365642931780936, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
-    - target: {fileID: 5455365643265821445, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
-    - target: {fileID: 5455365644046163675, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.ctime1
-      value: 21627
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.ctime2
-      value: 43253
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.ctime3
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key0.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key1.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key2.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key2.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.key3.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492860, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _densityGradient.m_NumColorKeys
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5455365644122492862, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: _soilManager
       value: 
       objectReference: {fileID: 923544803}
-    - target: {fileID: 5455365644122492863, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _mapData.maxDensity
-      value: 2800
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644122492863, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: _mapData.minDensity
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455365644193247710, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
-    - target: {fileID: 5455365644851043865, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 63c890d924691db4cbfa4588706624c8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
