@@ -1,0 +1,13 @@
+{
+    "name": "com.arav.ocs-terrain",
+    "version": "0.1.1",
+    "displayName": "OCSTerrain",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+        "com.arav.ocs-utility": "https://github.com/arav-jp/OpenConstructionSimulator2.git?path=/Assets/OCSUtility#new_structure"
+    },
+    "keywords": [
+        "ocs"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "com.arav.ocs-vehicle",
+    "version": "0.1.1",
+    "displayName": "OCSVehicle",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+        "com.arav.ocs-utility": "https://github.com/arav-jp/OpenConstructionSimulator2.git?path=/Assets/OCSUtility#new_structure"
+    },
+    "keywords": [
+        "ocs"
+    ]
+}
