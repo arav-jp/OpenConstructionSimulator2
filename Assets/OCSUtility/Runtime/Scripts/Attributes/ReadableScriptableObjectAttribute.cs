@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class ReadableScriptableObjectAttribute : PropertyAttribute
+namespace OCS.Utility
 {
+    public class ReadableScriptableObjectAttribute : PropertyAttribute
+    {
+    }
 }

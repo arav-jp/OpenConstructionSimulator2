@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class ReadOnlyAttribute : PropertyAttribute
+namespace OCS.Utility
 {
+    public class ReadOnlyAttribute : PropertyAttribute
+    {
+    }
 }
