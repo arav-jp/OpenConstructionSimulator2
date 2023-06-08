@@ -3,79 +3,82 @@ using System.Collections.Generic;
 using UnityEngine;
 using OCS.Utility;
 
-public class SoilManager : MonoBehaviour
+namespace OCS.Terrain
 {
-    #region Inspector
-    [SerializeField]
-    private Zone _particleZone;
-    [SerializeField]
-    private GameObject _soilObj;
-    [SerializeField]
-    private int _soilNum;
-    #endregion
-
-    #region Parameters
-    private Soil[] _soils;
-    private Transform _transform;
-
-    private bool _inited = false;
-    VoxelSystem.VoxelTerrain _vt;
-    #endregion
-
-    #region Properties
-    #endregion
-
-    private void Awake()
+    public class SoilManager : MonoBehaviour
     {
-        _transform = transform;
-        _soils = new Soil[_soilNum];
+        #region Inspector
+        [SerializeField]
+        private Zone _particleZone;
+        [SerializeField]
+        private GameObject _soilObj;
+        [SerializeField]
+        private int _soilNum;
+        #endregion
 
-        _inited = false;
-    }
+        #region Parameters
+        private Soil[] _soils;
+        private Transform _transform;
 
-    private void Start()
-    {
-        for(int i = 0; i < _soilNum; i++)
+        private bool _inited = false;
+        VoxelTerrain _vt;
+        #endregion
+
+        #region Properties
+        #endregion
+
+        private void Awake()
         {
-            var soil_obj = Instantiate(_soilObj);
-            soil_obj.transform.parent = _transform;
-            _soils[i] = soil_obj.GetComponent<Soil>();
-            _soils[i].Init(this, _particleZone);
-            _soils[i].Inactivate();
-            if (_vt) _soils[i].SetVoxelTerrain(_vt);
+            _transform = transform;
+            _soils = new Soil[_soilNum];
+
+            _inited = false;
         }
 
-        _inited = true;
-    }
-
-    public Soil Spawn(Vector3 position, float volume, float density)
-    {
-        foreach(Soil soil in _soils)
+        private void Start()
         {
-            if (soil.IsActivated()) continue;
-            if(soil.Activate(position, volume, density)) return soil;
-            break;
+            for (int i = 0; i < _soilNum; i++)
+            {
+                var soil_obj = Instantiate(_soilObj);
+                soil_obj.transform.parent = _transform;
+                _soils[i] = soil_obj.GetComponent<Soil>();
+                _soils[i].Init(this, _particleZone);
+                _soils[i].Inactivate();
+                if (_vt) _soils[i].SetVoxelTerrain(_vt);
+            }
+
+            _inited = true;
         }
-        return null;
-    }
 
-
-    public void SetVoxelTerrain(VoxelSystem.VoxelTerrain voxelTerrain)
-    {
-        _vt = voxelTerrain;
-        if (!_inited) return;
-        foreach(Soil soil in _soils)
+        public Soil Spawn(Vector3 position, float volume, float density)
         {
-            soil.SetVoxelTerrain(voxelTerrain);
+            foreach (Soil soil in _soils)
+            {
+                if (soil.IsActivated()) continue;
+                if (soil.Activate(position, volume, density)) return soil;
+                break;
+            }
+            return null;
         }
-    }
 
-    public void Inactivate()
-    {
-        foreach (Soil soil in _soils)
+
+        public void SetVoxelTerrain(VoxelTerrain voxelTerrain)
         {
-            if(!_particleZone.IsPointInZone(soil.transform.position))
-                soil.Inactivate();
+            _vt = voxelTerrain;
+            if (!_inited) return;
+            foreach (Soil soil in _soils)
+            {
+                soil.SetVoxelTerrain(voxelTerrain);
+            }
+        }
+
+        public void Inactivate()
+        {
+            foreach (Soil soil in _soils)
+            {
+                if (!_particleZone.IsPointInZone(soil.transform.position))
+                    soil.Inactivate();
+            }
         }
     }
 }
