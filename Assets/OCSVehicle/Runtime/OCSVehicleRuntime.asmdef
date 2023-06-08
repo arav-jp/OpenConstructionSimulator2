@@ -1,0 +1,16 @@
+{
+    "name": "OCSVehicleRuntime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f1dc7f0371b4d4c488112989384fce24"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
