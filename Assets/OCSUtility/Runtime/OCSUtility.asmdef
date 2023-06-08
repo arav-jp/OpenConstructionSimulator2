@@ -1,6 +1,6 @@
 {
     "name": "OCSUtility",
-    "rootNamespace": "OCS.Utility",
+    "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
