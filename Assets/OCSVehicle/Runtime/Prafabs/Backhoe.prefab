@@ -823,7 +823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5081655944874576483}
-  m_LocalRotation: {x: -0.34744155, y: -0, z: 0, w: 0.9377017}
+  m_LocalRotation: {x: -0.34744084, y: -0, z: 0, w: 0.93770194}
   m_LocalPosition: {x: 0, y: 0.72248816, z: 1.5282404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1187,24 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1a4ba92d2aaa1cd48aee0c3cf8d061af, type: 2}
-    _parametersCache: '{"input":0.0,"_inputValue":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.05000000074505806,"_output_min":-1.0,"_output_max":1.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: 5107f0329d16ab5418f6900ea2a0210c, type: 2}
-    _parametersCache: '{"output":0.0,"_torqueCoef":60.0,"_maxTorque":80.0,"_brakeTorque":150.0,"_brakeThreshold":0.009999999776482582}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5228910753269493124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,24 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1cc86d50fa882df49a18519efbdc9b61, type: 2}
-    _parametersCache: '{"input":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.05000000074505806,"_output_min":-1.0,"_output_max":1.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: 5107f0329d16ab5418f6900ea2a0210c, type: 2}
-    _parametersCache: '{"output":0.0,"_torqueCoef":20.0,"_maxTorque":20.0,"_brakeTorque":10.0,"_brakeThreshold":0.009999999776482582}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5228910753608783087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1745,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5296386219877505082}
-  m_LocalRotation: {x: 0.7158912, y: -0, z: -0, w: -0.6982119}
+  m_LocalRotation: {x: -0.7158929, y: -0.00000013570904, z: -0.00000012908673, w: 0.6982102}
   m_LocalPosition: {x: -0.00163652, y: 0.22165266, z: -0.37901437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2367,6 +2333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac783126d92e4cd48b30af123c586c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _modules: []
 --- !u!1 &5429832038122967609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,24 +2380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1cc86d50fa882df49a18519efbdc9b61, type: 2}
-    _parametersCache: '{"input":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.20000000298023225,"_output_min":-30.0,"_output_max":30.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: f26f3f1b9855b9644bc0913eba595355, type: 2}
-    _parametersCache: '{"output":0.0,"_controlType":1,"_axis":{"x":0.0,"y":1.0,"z":0.0},"_angularVelocity_min":-30.0,"_angularVelocity_max":30.0,"_angle_limit":false,"_angle_init":0.0,"_angle_min":0.0,"_angle_max":0.0}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5429832038424776117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,24 +2426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1cc86d50fa882df49a18519efbdc9b61, type: 2}
-    _parametersCache: '{"input":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.10000000149011612,"_output_min":-30.0,"_output_max":30.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: f26f3f1b9855b9644bc0913eba595355, type: 2}
-    _parametersCache: '{"output":0.0,"_controlType":1,"_axis":{"x":1.0,"y":0.0,"z":0.0},"_angularVelocity_min":-30.0,"_angularVelocity_max":30.0,"_angle_limit":true,"_angle_init":39.395999908447269,"_angle_min":0.0,"_angle_max":70.0}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5429832038507190082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,24 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1cc86d50fa882df49a18519efbdc9b61, type: 2}
-    _parametersCache: '{"input":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.20000000298023225,"_output_min":-20.0,"_output_max":20.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: f26f3f1b9855b9644bc0913eba595355, type: 2}
-    _parametersCache: '{"output":0.0,"_controlType":1,"_axis":{"x":1.0,"y":0.0,"z":0.0},"_angularVelocity_min":-20.0,"_angularVelocity_max":20.0,"_angle_limit":true,"_angle_init":115.80000305175781,"_angle_min":40.0,"_angle_max":150.0}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5429832038620374711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,24 +2555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1a4ba92d2aaa1cd48aee0c3cf8d061af, type: 2}
-    _parametersCache: '{"input":0.0,"_inputValue":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.5,"_output_min":-20.0,"_output_max":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: f26f3f1b9855b9644bc0913eba595355, type: 2}
-    _parametersCache: '{"output":0.0,"_controlType":0,"_axis":{"x":1.0,"y":0.0,"z":0.0},"_angularVelocity_min":0.0,"_angularVelocity_max":0.0,"_angle_limit":true,"_angle_init":-10.0,"_angle_min":0.0,"_angle_max":-20.0}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5429832038645361697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,24 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf928c2166d8d46b3232a14b9cbb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-    scriptableObject: {fileID: 11400000, guid: 1cc86d50fa882df49a18519efbdc9b61, type: 2}
-    _parametersCache: '{"input":0.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    transform: {fileID: 0}
-  _transferFunction:
-    scriptableObject: {fileID: 11400000, guid: 375ec2cc7a0f91a4c8874994b244aa40, type: 2}
-    _parametersCache: '{"input":0.0,"output":0.0,"_T":0.20000000298023225,"_output_min":-10.0,"_output_max":10.0}'
-    _scriptableObject: {fileID: 0}
-    input: 0
-    output: 0
-  _output:
-    scriptableObject: {fileID: 11400000, guid: f26f3f1b9855b9644bc0913eba595355, type: 2}
-    _parametersCache: '{"output":0.0,"_controlType":1,"_axis":{"x":1.0,"y":0.0,"z":0.0},"_angularVelocity_min":-10.0,"_angularVelocity_max":10.0,"_angle_limit":true,"_angle_init":-17.5,"_angle_min":-40.0,"_angle_max":15.0}'
-    _scriptableObject: {fileID: 0}
-    output: 0
-    transform: {fileID: 0}
+  _moduleName: 
 --- !u!1 &5455365642893174343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5889,7 +5771,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7743474326367906096}
-  m_LocalRotation: {x: -0.48604348, y: -0, z: 0, w: 0.8739346}
+  m_LocalRotation: {x: -0.48604304, y: -0, z: 0, w: 0.8739349}
   m_LocalPosition: {x: 0.101387985, y: 0.37564832, z: 0.4257801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
