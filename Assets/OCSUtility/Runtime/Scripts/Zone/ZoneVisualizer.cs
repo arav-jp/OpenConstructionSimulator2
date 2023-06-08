@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#if UNITY_EDITOR
-[RequireComponent(typeof(Zone))]
-[ExecuteAlways]
-public class ZoneVisualizer : Visualizer<Zone>
+namespace OCS.Utility
 {
-    protected override void Visualize()
+#if UNITY_EDITOR
+    [RequireComponent(typeof(Zone))]
+    [ExecuteAlways]
+    public class ZoneVisualizer : Visualizer<Zone>
     {
-        if(Application.isPlaying || Time.time > 1.0f)
-        _target.Visualize();
+        protected override void Visualize()
+        {
+            if (Application.isPlaying || Time.time > 1.0f)
+                _target.Visualize();
+        }
     }
-}
 #endif
+}

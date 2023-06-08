@@ -2,41 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteAlways]
-public class Zone : MonoBehaviour
+namespace OCS.Utility
 {
-    protected Transform _transform;
-
-    protected float _volume;
-    public float volume { get => _volume; }
-
-    protected virtual void Awake()
+    [ExecuteAlways]
+    public class Zone : MonoBehaviour
     {
-        _transform = transform;
-    }
+        protected Transform _transform;
 
-    protected virtual void Start()
-    {
-    
-    }
+        protected float _volume;
+        public float volume { get => _volume; }
 
-    protected void OnEnable()
-    {
-        Awake();
-        Start();
-    }
+        protected virtual void Awake()
+        {
+            _transform = transform;
+        }
 
-    private void Update()
-    {
-        if(!Application.isPlaying) Start();
-    }
+        protected virtual void Start()
+        {
 
-    public virtual bool IsPointInZone(Vector3 point) { return false; }
+        }
 
-    public virtual void Visualize() { }
+        protected void OnEnable()
+        {
+            Awake();
+            Start();
+        }
 
-    protected void OnValidate()
-    {
-        OnEnable();
+        private void Update()
+        {
+            if (!Application.isPlaying) Start();
+        }
+
+        public virtual bool IsPointInZone(Vector3 point) { return false; }
+
+        public virtual void Visualize() { }
+
+        protected void OnValidate()
+        {
+            OnEnable();
+        }
     }
 }
