@@ -4,11 +4,11 @@
 ### Unity Version
 2020.3 or later
 ### Depend Packages
-- [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSUtility)
+- [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSUtility)
 
 ## Installation
 ### Install dependencies
-See [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSUtility)
+See [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSUtility)
 
 ### Install OCSTerrain package
 1. Open the package manager from `Window` -> `Package Manager` and select "Add package from git URL..."
