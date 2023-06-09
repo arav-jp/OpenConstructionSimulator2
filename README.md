@@ -1,4 +1,6 @@
 ## OpenConstructionSimulator2
+![image](https://github.com/arav-jp/OpenConstructionSimulator2/assets/37181352/6ce194fd-8a21-4c4d-841a-88f4e5d1d201)
+
 ## Packages
 - [OCSSystem](https://github.com/arav-jp/OpenConstructionSimulator2/blob/docs/Assets/OCSSystem/README.md)
 : Unimplemented
