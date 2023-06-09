@@ -1,0 +1,13 @@
+{
+    "name": "com.arav.ocs-terrain",
+    "version": "0.1.1",
+    "displayName": "OCSTerrain",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+        "com.arav.ocs-utility": "0.1.1"
+    },
+    "keywords": [
+        "ocs"
+    ]
+}

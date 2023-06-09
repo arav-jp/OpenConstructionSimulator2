@@ -1,0 +1,15 @@
+{
+    "name": "com.arav.ocs-assets",
+    "version": "0.1.1",
+    "displayName": "OCSAssets",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+        "com.arav.ocs-vehicle": "0.1.1",
+        "com.arav.ocs-vehicle-io": "0.1.1",
+        "com.arav.ocs-terrain": "0.1.1"
+    },
+    "keywords": [
+        "ocs"
+    ]
+}

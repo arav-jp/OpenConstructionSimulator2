@@ -1,0 +1,12 @@
+{
+    "name": "com.arav.ocs-utility",
+    "version": "0.1.1",
+    "displayName": "OCSUtility",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+    },
+    "keywords": [
+        "ocs"
+    ]
+}
