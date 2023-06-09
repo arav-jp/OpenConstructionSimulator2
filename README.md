@@ -16,6 +16,14 @@
 : Common feature package used by OCS packages
 ## Installation
 See the README of each package.
+
+The order of installation is as follows.
+1. OCSUtility
+2. OCSVehicle
+3. OCSVehicleIO
+4. OCSTerrain
+5. OCSAssets
+6. (OCSSystem)
 ## License
 See [LICENSE](https://github.com/arav-jp/OpenConstructionSimulator2/blob/main/LICENSE)
 ## Contact
