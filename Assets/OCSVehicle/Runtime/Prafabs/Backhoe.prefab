@@ -2559,6 +2559,7 @@ GameObject:
   - component: {fileID: 8836600344400847903}
   - component: {fileID: 3124310091061631692}
   - component: {fileID: 6975111943878235917}
+  - component: {fileID: 8226975119053910232}
   m_Layer: 10
   m_Name: DozerCylinder
   m_TagString: Untagged
@@ -2573,7 +2574,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2561266548757361843}
-  m_LocalRotation: {x: 0.23502585, y: -0, z: -0, w: 0.9719891}
+  m_LocalRotation: {x: 0.21996121, y: -0, z: -0, w: 0.97550863}
   m_LocalPosition: {x: 0.00019259006, y: -0.19417492, z: 0.8837368}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2629,6 +2630,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1183024399 &8226975119053910232
+LookAtConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561266548757361843}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 180, z: 0}
+  m_Roll: 0
+  m_WorldUpObject: {fileID: 0}
+  m_UseUpObject: 0
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 7722054422554871106}
+    weight: 1
 --- !u!1 &2714901731666620844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,6 +2885,7 @@ GameObject:
   - component: {fileID: 7722054422554871106}
   - component: {fileID: 4502762002975489544}
   - component: {fileID: 8108832810936416795}
+  - component: {fileID: 9123378328053203947}
   m_Layer: 7
   m_Name: DozerCylinder.001
   m_TagString: Untagged
@@ -2879,7 +2900,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3403494620837005198}
-  m_LocalRotation: {x: 0.11481575, y: 0, z: 0, w: 0.9933868}
+  m_LocalRotation: {x: 0.13410309, y: -0, z: -0, w: 0.9909674}
   m_LocalPosition: {x: -0.09480728, y: 0.61184967, z: 0.75979424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2936,6 +2957,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1183024399 &9123378328053203947
+LookAtConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3403494620837005198}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_Roll: 0
+  m_WorldUpObject: {fileID: 0}
+  m_UseUpObject: 0
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 8836600344400847903}
+    weight: 1
 --- !u!1 &3948614909323820382
 GameObject:
   m_ObjectHideFlags: 0
