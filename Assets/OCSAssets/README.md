@@ -4,10 +4,10 @@
 ### Unity Version
 2020.3 or later
 ### Depend Packages
-- [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSUtility)
-- [OCSTerrain](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSTerrain)
-- [OCSVehicle](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSVehicle)
-- [OCSVehicleIO](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSVehicleIO)
+- [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSUtility)
+- [OCSTerrain](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSTerrain)
+- [OCSVehicle](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSVehicle)
+- [OCSVehicleIO](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSVehicleIO)
 - [ROS-TCP-Connector](https://github.com/Unity-Technologies/ROS-TCP-Connector)
 
 ## Installation
