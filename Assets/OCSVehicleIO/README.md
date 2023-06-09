@@ -4,14 +4,14 @@
 ### Unity Version
 2020.3 or later
 ### Depend Packages
-- [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSUtility)
-- [OCSVehicle](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSVehicle)
+- [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSUtility)
+- [OCSVehicle](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSVehicle)
 - [ROS-TCP-Connector](https://github.com/Unity-Technologies/ROS-TCP-Connector)
 
 ## Installation
 ### Install dependencies
-See [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSUtility), 
-[OCSVehicle](https://github.com/arav-jp/OpenConstructionSimulator2/tree/docs/Assets/OCSVehicle) and [ROS-TCP-Connector](https://github.com/Unity-Technologies/ROS-TCP-Connector)
+See [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSUtility), 
+[OCSVehicle](https://github.com/arav-jp/OpenConstructionSimulator2/tree/main/Assets/OCSVehicle) and [ROS-TCP-Connector](https://github.com/Unity-Technologies/ROS-TCP-Connector)
 
 ### Install OCSVehicleIO package
 1. Open the package manager from `Window` -> `Package Manager` and select "Add package from git URL..."
