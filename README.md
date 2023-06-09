@@ -14,6 +14,8 @@
 : Vehicle controller package
 - [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/blob/docs/Assets/OCSUtility/README.md)
 : Common feature package used by OCS packages
+## Installation
+See the README of each package.
 ## License
 See [LICENSE](https://github.com/arav-jp/OpenConstructionSimulator2/blob/docs/LICENSE)
 ## Contact
