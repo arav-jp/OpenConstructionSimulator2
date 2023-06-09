@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OCS.Utility;
 
-namespace VoxelSystem
+namespace OCS.Terrain
 {
     [System.Serializable]
     public struct VoxelData

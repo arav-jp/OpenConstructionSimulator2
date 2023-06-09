@@ -1,0 +1,16 @@
+{
+    "name": "com.arav.ocs-vehicle-io",
+    "version": "0.1.1",
+    "displayName": "OCSVehicleIO",
+    "description": "",
+    "unity": "2020.3",
+    "dependencies": {
+        "com.arav.ocs-utility": "0.1.1",
+        "com.arav.ocs-vehicle": "0.1.1",
+        "com.unity.inputsystem": "1.3.0",
+        "com.unity.robotics.ros-tcp-connector": "0.7.0-preview"
+    },
+    "keywords": [
+        "ocs"
+    ]
+}

@@ -3,32 +3,35 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-#if UNITY_EDITOR
-[CustomPropertyDrawer(typeof(ReadableScriptableObjectAttribute))]
-public class ReadableScriptableObjectDrawer : PropertyDrawer
+namespace OCS.Utility
 {
-    private Editor editor = null;
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+#if UNITY_EDITOR
+    [CustomPropertyDrawer(typeof(ReadableScriptableObjectAttribute))]
+    public class ReadableScriptableObjectDrawer : PropertyDrawer
     {
-        EditorGUI.BeginDisabledGroup(true);
-        EditorGUI.PropertyField(position, property, label, true);
-        EditorGUI.EndDisabledGroup();
-
-        //EditorGUI.PropertyField(position, property, label, false);
-
-        if (property.objectReferenceValue != null)
-            property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, GUIContent.none);
-        else
-            return;
-
-        if (property.isExpanded)
+        private Editor editor = null;
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            EditorGUI.indentLevel++;
-            if (!editor)
-                Editor.CreateCachedEditor(property.objectReferenceValue, null, ref editor);
-            editor.OnInspectorGUI();
-            EditorGUI.indentLevel--;
+            EditorGUI.BeginDisabledGroup(true);
+            EditorGUI.PropertyField(position, property, label, true);
+            EditorGUI.EndDisabledGroup();
+
+            //EditorGUI.PropertyField(position, property, label, false);
+
+            if (property.objectReferenceValue != null)
+                property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, GUIContent.none);
+            else
+                return;
+
+            if (property.isExpanded)
+            {
+                EditorGUI.indentLevel++;
+                if (!editor)
+                    Editor.CreateCachedEditor(property.objectReferenceValue, null, ref editor);
+                editor.OnInspectorGUI();
+                EditorGUI.indentLevel--;
+            }
         }
     }
-}
 #endif
+}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CenterOfMass : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody _rb;
+    private ArticulationBody _ab;
 
     [SerializeField]
     private Vector3 _centerOfMass;
@@ -15,8 +15,12 @@ public class CenterOfMass : MonoBehaviour
 
     private void Awake()
     {
-        if (!_rb) _rb = GetComponent<Rigidbody>();
+        if (!_ab) _ab = GetComponent<ArticulationBody>();
+    }
+
+    private void Start()
+    {
         if (_centerOfMassObj) _centerOfMass = _centerOfMassObj.position - this.transform.position;
-        if (_rb) _rb.centerOfMass = _centerOfMass;
+        if (_ab) _ab.centerOfMass = _centerOfMass;
     }
 }

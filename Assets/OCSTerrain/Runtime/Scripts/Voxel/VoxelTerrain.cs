@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace VoxelSystem
+namespace OCS.Terrain
 {
     public class VoxelTerrain : MonoBehaviour
     {
