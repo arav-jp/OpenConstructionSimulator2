@@ -1,8 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
+namespace OCS.Vehicle
+{
+    public class VehicleModule : MonoBehaviour
+    {
+        [SerializeField]
+        protected string _moduleName;
+        public string moduleName { get => _moduleName; }
+        public virtual System.Type moduleType { get => typeof(VehicleModule); }
+    }
+}
+
+/*
 [ExecuteAlways]
 public class VehicleModule : MonoBehaviour
 {
@@ -47,3 +58,4 @@ public class VehicleModule : MonoBehaviour
         }
     }
 }
+*/

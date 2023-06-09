@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OCS.Utility;
 
-public class Vehicle : MonoBehaviour
+namespace OCS.Vehicle
 {
-    private Dictionary<string, VehicleModule> _modules;
-
-    private void Awake()
+    public class Vehicle : MonoBehaviour
     {
-        _modules = new Dictionary<string, VehicleModule>();
+        [SerializeField, ReadOnly]
+        private VehicleModule[] _modules;
+        private Dictionary<string, VehicleModule> _modules_dic;
 
-        VehicleModule[] vms = GetComponentsInChildren<VehicleModule>();
-        foreach (VehicleModule vm in vms)
+        private void Awake()
         {
-            _modules.Add(vm.name, vm);
+            _modules = GetComponentsInChildren<VehicleModule>();
+            _modules_dic = new Dictionary<string, VehicleModule>();
+            foreach (VehicleModule module in _modules)
+            {
+                _modules_dic.Add(module.moduleName, module);
+            }
         }
-    }
 
-    public VehicleModule GetModule(string name)
-    {
-        if (!_modules[name]) return null;
-        return _modules[name];
+        public VehicleModule GetModule(string moduleName)
+        {
+            if (_modules_dic.ContainsKey(moduleName)) return null;
+            return _modules_dic[moduleName];
+        }
+
+        public T GetModule<T>(string moduleName) where T : VehicleModule
+        {
+            if (!_modules_dic.ContainsKey(moduleName)) return null;
+            VehicleModule vm = _modules_dic[moduleName];
+            if (vm.moduleType != typeof(T)) return null;
+            return vm as T;
+        }
     }
 }
