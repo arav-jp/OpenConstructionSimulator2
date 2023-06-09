@@ -13,4 +13,5 @@
 - [OCSUtility](https://github.com/arav-jp/OpenConstructionSimulator2/blob/docs/Assets/OCSUtility/README.md)
 : Common feature package used by OCS packages
 ## License
+See [LICENSE](https://github.com/arav-jp/OpenConstructionSimulator2/blob/docs/LICENSE)
 ## Contact
