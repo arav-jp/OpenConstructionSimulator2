@@ -174,6 +174,36 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1641311925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1641311926}
+  m_Layer: 7
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1641311926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641311925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.35, z: -0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1944929878506332224}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1974770536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1196,7 @@ MonoBehaviour:
   - {fileID: 5883781471490567385}
   - {fileID: 5883781472738897260}
   - {fileID: 5883781471159990966}
+  _magnification: 100
 --- !u!1 &1878632392062126075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,7 +2358,7 @@ ArticulationBody:
   m_GameObject: {fileID: 1944929878258117446}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 3000
+  m_Mass: 2000
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -2444,6 +2475,7 @@ GameObject:
   - component: {fileID: 1944929878506332236}
   - component: {fileID: 1944929878506332227}
   - component: {fileID: 1944929878506332226}
+  - component: {fileID: 1292019973}
   m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
@@ -2466,6 +2498,7 @@ Transform:
   - {fileID: 1944929877984468568}
   - {fileID: 1944929877288469396}
   - {fileID: 1621178912}
+  - {fileID: 1641311926}
   m_Father: {fileID: 1944929877523281328}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2548,6 +2581,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moduleName: Body
   _joint: {fileID: 1944929878506332227}
+--- !u!114 &1292019973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944929878506332225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244c3c00847565c4c8a6568c177a4686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ab: {fileID: 1944929878506332236}
+  _centerOfMass: {x: 0, y: 0, z: 0}
+  _centerOfMassObj: {fileID: 1641311926}
 --- !u!1 &2561266548757361843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,7 +3778,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781471159990955}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: -0.95, y: 0.3, z: -1.2}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3841,7 +3889,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781471490567390}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: -0.95, y: 0.3, z: 0.3}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3952,7 +4000,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781471762466952}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: 0.95, y: 0.3, z: 0.3}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4063,7 +4111,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781471897055888}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: -0.95, y: 0.3, z: 1}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4172,6 +4220,7 @@ MonoBehaviour:
   - {fileID: 5883781471762466954}
   - {fileID: 5883781472451109018}
   - {fileID: 5883781472424290691}
+  _magnification: 100
 --- !u!1 &5883781472424290689
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,7 +4276,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781472424290689}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: 0.95, y: 0.3, z: -1.2}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4338,7 +4387,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781472451109016}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: 0.95, y: 0.3, z: -0.4}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4449,7 +4498,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781472738897249}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: -0.95, y: 0.3, z: -0.4}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4560,7 +4609,7 @@ ArticulationBody:
   m_GameObject: {fileID: 5883781472744638294}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 20
+  m_Mass: 30
   m_ParentAnchorPosition: {x: 0.95, y: 0.3, z: 1}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}

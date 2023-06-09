@@ -167,6 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controlTarget: {fileID: 1365076805}
+  _leftCrawlerThrottle: 0
+  _leftCrawlerReverse: 0
+  _rightCrawlerThrottle: 0
+  _rightCrawlerReverse: 0
 --- !u!1001 &1365076804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,30 +225,6 @@ PrefabInstance:
     - target: {fileID: 1944929878258117446, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
       propertyPath: m_Name
       value: Backhoe
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954133808232992505, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6982102
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954133808232992505, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7158929
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954133808232992505, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.00000013570904
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954133808232992505, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00000012908673
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722054422554871106, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.13410309
-      objectReference: {fileID: 0}
-    - target: {fileID: 8836600344400847903, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.21996121
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d19f402c021e2448ba8cabe2128ac0, type: 3}
