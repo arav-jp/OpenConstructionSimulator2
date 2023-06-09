@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using OCS.Utility;
+using OCS.Vehicle;
 
 namespace OCS.VehicleIO
 {
@@ -9,18 +11,13 @@ namespace OCS.VehicleIO
     {
         private BackhoeInput _input;
 
-        [Header("Debug")]
-        [SerializeField]
-        [ReadOnly]
+        [SerializeField, ReadOnly]
         private float _leftCrawlerThrottle;
-        [SerializeField]
-        [ReadOnly]
+        [SerializeField, ReadOnly]
         private bool _leftCrawlerReverse;
-        [SerializeField]
-        [ReadOnly]
+        [SerializeField, ReadOnly]
         private float _rightCrawlerThrottle;
-        [SerializeField]
-        [ReadOnly]
+        [SerializeField, ReadOnly]
         private bool _rightCrawlerReverse;
 
         private void Awake()
@@ -43,8 +40,10 @@ namespace OCS.VehicleIO
 
         private void Update()
         {
-            base._controlTarget.GetModule("LeftCrawler").input.unityInput = _leftCrawlerThrottle * (_leftCrawlerReverse ? -1.0f : 1.0f);
-            base._controlTarget.GetModule("RightCrawler").input.unityInput = _rightCrawlerThrottle * (_rightCrawlerReverse ? -1.0f : 1.0f);
+            float throttle_l = _leftCrawlerThrottle * (_leftCrawlerReverse ? -1.0f : 1.0f);
+            float throttle_r = _rightCrawlerThrottle * (_rightCrawlerReverse ? -1.0f : 1.0f);
+            _controlTarget.GetModule<WheelModule>("LeftCrawler").Drive(throttle_l);
+            _controlTarget.GetModule<WheelModule>("RightCrawler").Drive(throttle_r);
         }
 
         private void LeftCrawlerThrottle(InputAction.CallbackContext context)
@@ -69,22 +68,22 @@ namespace OCS.VehicleIO
 
         private void Body(InputAction.CallbackContext context)
         {
-            base._controlTarget.GetModule("Body").input.unityInput = context.ReadValue<float>() * 30.0f;
+            _controlTarget.GetModule<RotationalJointModule>("Body").Drive(context.ReadValue<float>() * 30.0f);
         }
 
         private void Boom(InputAction.CallbackContext context)
         {
-            base._controlTarget.GetModule("Boom").input.unityInput = context.ReadValue<float>() * 30.0f;
+            _controlTarget.GetModule<RotationalJointModule>("Boom").Drive(context.ReadValue<float>() * 30.0f);
         }
 
         private void Arm(InputAction.CallbackContext context)
         {
-            base._controlTarget.GetModule("Arm").input.unityInput = context.ReadValue<float>() * 30.0f;
+            _controlTarget.GetModule<RotationalJointModule>("Arm").Drive(context.ReadValue<float>() * 30.0f);
         }
 
         private void Bucket(InputAction.CallbackContext context)
         {
-            base._controlTarget.GetModule("Bucket").input.unityInput = context.ReadValue<float>() * -30.0f;
+            _controlTarget.GetModule<RotationalJointModule>("Bucket").Drive(context.ReadValue<float>() * -30.0f);
         }
     }
 }
