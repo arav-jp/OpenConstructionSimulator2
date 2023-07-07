@@ -72,6 +72,11 @@ namespace OCS.Terrain
             _terrain.terrainData.SetHeights(0, 0, _heightmap_original);
         }
 
+        public void Reset()
+        {
+            _terrain.terrainData.SetHeights(0, 0, _heightmap_original);
+        }
+
         public void AddOffset(float offset)
         {
             for (int x = 0; x < heightmapResolution; x++)
