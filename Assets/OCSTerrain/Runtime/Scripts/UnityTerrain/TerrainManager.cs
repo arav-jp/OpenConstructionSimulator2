@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OCS.Utility;
 
 namespace OCS.Terrain
 {
@@ -13,6 +14,8 @@ namespace OCS.Terrain
         private float _hz;
         [SerializeField]
         private float _depth;
+        [SerializeField]
+        private Zone _preventZone;
         #endregion
         #region Parameters
         private Transform _transform;
@@ -92,6 +95,7 @@ namespace OCS.Terrain
         public void SetHeight(int x, int z, float height)
         {
             if (x < 0 || heightmapResolution <= x || z < 0 || heightmapResolution <= z) return;
+            if (_preventZone && _preventZone.IsPointInZone(Index2Position(x, z) + Vector3.up*(height - _offset.y))) return;
             _heightmap[z, x] = (height - _offset.y) * _dimentionRatio.y;
         }
 
