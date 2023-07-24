@@ -125,7 +125,18 @@ namespace OCS.Terrain
                 for (int z = index_start_z; z <= index_end_z; z++)
                 {
                     Vector3 pos = _terrainManager.Index2Position(x, z);
-                    _terrainManager.SetHeight(x, z, _voxelMap.GetHeightVerbose(pos));
+                    if (!_terrainManager.SetHeight(x, z, _voxelMap.GetHeightVerbose(pos)))
+                    {
+                        Ray ray = new Ray(pos + Vector3.up * _terrainManager.terrainSize.y, Vector3.down);
+                        RaycastHit hit;
+                        if (Physics.Raycast(ray, out hit, _terrainManager.terrainSize.y, _terrainLayer))
+                        {
+                            TerrainManager tm = hit.collider.gameObject.GetComponent<TerrainManager>();
+                            int x_, z_;
+                            (x_, z_) = tm.Position2Index(pos);
+                            tm.SetHeight(x_, z_, _voxelMap.GetHeightVerbose(pos));
+                        }
+                    }
                 }
             }
         }

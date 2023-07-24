@@ -91,12 +91,12 @@ namespace OCS.Terrain
             }
             _terrain.terrainData.SetHeights(0, 0, _heightmap);
         }
-
-        public void SetHeight(int x, int z, float height)
+        public bool SetHeight(int x, int z, float height)
         {
-            if (x < 0 || heightmapResolution <= x || z < 0 || heightmapResolution <= z) return;
-            if (_preventZone && _preventZone.IsPointInZone(Index2Position(x, z) + Vector3.up*(height - _offset.y))) return;
+            if (x < 0 || heightmapResolution <= x || z < 0 || heightmapResolution <= z) return false;
+            if (_preventZone && _preventZone.IsPointInZone(Index2Position(x, z) + Vector3.up*(height - _offset.y))) return false;
             _heightmap[z, x] = (height - _offset.y) * _dimentionRatio.y;
+            return true;
         }
 
         public (int, int) Position2Index(Vector3 pos)
