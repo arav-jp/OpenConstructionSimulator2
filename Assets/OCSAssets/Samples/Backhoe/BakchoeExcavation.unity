@@ -307,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hz: 5
   _depth: 5
+  _preventZone: {fileID: 0}
 --- !u!1001 &5527702169949116085
 PrefabInstance:
   m_ObjectHideFlags: 0
