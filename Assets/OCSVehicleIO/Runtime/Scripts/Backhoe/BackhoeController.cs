@@ -7,7 +7,7 @@ using OCS.Vehicle;
 
 namespace OCS.VehicleIO
 {
-    public class BackhoeController : VehicleController
+    public class BackhoeController : MonoBehaviour
     {
         private BackhoeInput _input;
 
@@ -42,8 +42,8 @@ namespace OCS.VehicleIO
         {
             float throttle_l = _leftCrawlerThrottle * (_leftCrawlerReverse ? -1.0f : 1.0f);
             float throttle_r = _rightCrawlerThrottle * (_rightCrawlerReverse ? -1.0f : 1.0f);
-            _controlTarget.GetModule<WheelModule>("LeftCrawler").Drive(throttle_l);
-            _controlTarget.GetModule<WheelModule>("RightCrawler").Drive(throttle_r);
+            // _controlTarget.GetModule<WheelModule>("LeftCrawler").Drive(throttle_l);
+            // _controlTarget.GetModule<WheelModule>("RightCrawler").Drive(throttle_r);
         }
 
         private void LeftCrawlerThrottle(InputAction.CallbackContext context)
@@ -68,22 +68,22 @@ namespace OCS.VehicleIO
 
         private void Body(InputAction.CallbackContext context)
         {
-            _controlTarget.GetModule<RotationalJointModule>("Body").Drive(context.ReadValue<float>() * 30.0f);
+            // _controlTarget.GetModule<RotationalJointModule>("Body").Drive(context.ReadValue<float>() * 30.0f);
         }
 
         private void Boom(InputAction.CallbackContext context)
         {
-            _controlTarget.GetModule<RotationalJointModule>("Boom").Drive(context.ReadValue<float>() * 30.0f);
+            // _controlTarget.GetModule<RotationalJointModule>("Boom").Drive(context.ReadValue<float>() * 30.0f);
         }
 
         private void Arm(InputAction.CallbackContext context)
         {
-            _controlTarget.GetModule<RotationalJointModule>("Arm").Drive(context.ReadValue<float>() * 30.0f);
+            // _controlTarget.GetModule<RotationalJointModule>("Arm").Drive(context.ReadValue<float>() * 30.0f);
         }
 
         private void Bucket(InputAction.CallbackContext context)
         {
-            _controlTarget.GetModule<RotationalJointModule>("Bucket").Drive(context.ReadValue<float>() * -30.0f);
+            // _controlTarget.GetModule<RotationalJointModule>("Bucket").Drive(context.ReadValue<float>() * -30.0f);
         }
     }
 }

@@ -5,12 +5,10 @@ using UnityEngine;
 
 namespace OCS.Vehicle
 {
-    public class RotationalJointModule : VehicleModule
+    public class RotationalJointModule : MonoBehaviour
     {
         [SerializeField]
         private RotationalJoint _joint;
-
-        public override Type moduleType { get => typeof(RotationalJointModule); }
 
         public void Drive(float input)
         {
