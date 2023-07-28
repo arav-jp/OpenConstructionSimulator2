@@ -7,8 +7,20 @@ using OCS.Vehicle;
 
 namespace OCS.VehicleIO
 {
-    public class BackhoeController : MonoBehaviour
+    public class BackhoeController : VehicleController<Backhoe>
     {
+        protected JoyStickInput _leftCrawlerJoystick;
+        protected JoyStickInput _rightCrawlerJoystick;
+        protected JoyStickInput _jointJoystick_left;
+        protected JoyStickInput _jointJoystick_right;
+
+        protected virtual void Update()
+        {
+            _controlTarget.leftCrawler.Drive(_leftCrawlerJoystick.y);
+            _controlTarget.rightCrawler.Drive(_rightCrawlerJoystick.y);
+        }
+
+        /*
         private BackhoeInput _input;
 
         [SerializeField, ReadOnly]
@@ -85,5 +97,6 @@ namespace OCS.VehicleIO
         {
             // _controlTarget.GetModule<RotationalJointModule>("Bucket").Drive(context.ReadValue<float>() * -30.0f);
         }
+        */
     }
 }
