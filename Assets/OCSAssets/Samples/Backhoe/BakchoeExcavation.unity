@@ -216,17 +216,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1256118585 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faa2ca774873f5f46bbc721a15f68d8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1414852142
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,30 +319,6 @@ PrefabInstance:
       propertyPath: _terrainManager
       value: 
       objectReference: {fileID: 1414852146}
-    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _armJoint
-      value: 
-      objectReference: {fileID: 5527702169949116090}
-    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _bodyJoint
-      value: 
-      objectReference: {fileID: 5527702169949116088}
-    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _boomJoint
-      value: 
-      objectReference: {fileID: 5527702169949116089}
-    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _bucketJoint
-      value: 
-      objectReference: {fileID: 5527702169949116091}
-    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _leftCrawler
-      value: 
-      objectReference: {fileID: 5527702169949116093}
-    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _rightCrawler
-      value: 
-      objectReference: {fileID: 5527702169949116092}
     - target: {fileID: 5527702169474508560, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -402,101 +367,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackhoeSet
       objectReference: {fileID: 0}
-    - target: {fileID: 6398430031184910613, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-      propertyPath: _controlTarget
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6398430031184910613, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-    - {fileID: 6243231407176968485, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
---- !u!1 &5527702169949116086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6398430031184910635, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5527702169949116087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527702169949116086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5bc115936520f540a1ac0c716613fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _controlTarget: {fileID: 1256118585}
-  _maxLeftCrawlerInput: 200
-  _maxRightCrawlerInput: 200
-  _maxBodyInput: 30
-  _maxBoomInput: 30
-  _maxArmInput: 30
-  _maxBucketInput: 30
---- !u!114 &5527702169949116088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6218222852792272492, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5527702169949116089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6218222852236212234, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5527702169949116090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6218222852279606960, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5527702169949116091 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6218222852423064032, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5527702169949116092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2094512223091988728, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7713a86d5f451a74fb84ebea91ae0281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5527702169949116093 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6161453590065070444, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
-  m_PrefabInstance: {fileID: 5527702169949116085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7713a86d5f451a74fb84ebea91ae0281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
