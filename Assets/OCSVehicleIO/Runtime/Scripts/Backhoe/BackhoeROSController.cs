@@ -28,9 +28,9 @@ namespace OCS.VehicleIO
         private void Start()
         {
             _ros.Subscribe<JoyMsg>(_leftCrawlerJoystick_topicName, LeftCrawlerJoyCallback);
-            _ros.Subscribe<JoyMsg>(_leftCrawlerJoystick_topicName, RightCrawlerJoyCallback);
-            _ros.Subscribe<JoyMsg>(_leftCrawlerJoystick_topicName, JointJoyLeftCallback);
-            _ros.Subscribe<JoyMsg>(_leftCrawlerJoystick_topicName, JointJoyRightCallback);
+            _ros.Subscribe<JoyMsg>(_rightCrawlerJoystick_topicName, RightCrawlerJoyCallback);
+            _ros.Subscribe<JoyMsg>(_jointJoystick_left_topicName, JointJoyLeftCallback);
+            _ros.Subscribe<JoyMsg>(_jointJoystick_right_topicName, JointJoyRightCallback);
         }
 
         private void LeftCrawlerJoyCallback(JoyMsg msg)
