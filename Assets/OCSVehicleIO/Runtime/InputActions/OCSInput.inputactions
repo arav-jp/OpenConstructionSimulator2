@@ -58,6 +58,15 @@
                     "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "BoomLightSwitchButton",
+                    "type": "Button",
+                    "id": "ae82cdfc-9a45-413b-a90a-375a55c5c81e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -124,6 +133,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "JointJoystickRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "622d8628-b989-4625-8e40-667891ad7047",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BoomLightSwitchButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

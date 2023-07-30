@@ -35,5 +35,10 @@ namespace OCS.VehicleIO
             _controlTarget.armJoint.Drive(_jointJoystick_left.y * _maxArmInput);
             _controlTarget.bucketJoint.Drive(-_jointJoystick_right.x * _maxBucketInput);
         }
+
+        protected void SwitchBoomLight()
+        {
+            _controlTarget.boomLight.Switch();
+        }
     }
 }

@@ -80,6 +80,15 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
                     ""processors"": ""NormalizeVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""BoomLightSwitchButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae82cdfc-9a45-413b-a90a-375a55c5c81e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +157,17 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
                     ""action"": ""JointJoystickRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""622d8628-b989-4625-8e40-667891ad7047"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BoomLightSwitchButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -162,6 +182,7 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
         m_Backhoe_RightCrawlerJoystickReverse = m_Backhoe.FindAction("RightCrawlerJoystickReverse", throwIfNotFound: true);
         m_Backhoe_JointJoystickLeft = m_Backhoe.FindAction("JointJoystickLeft", throwIfNotFound: true);
         m_Backhoe_JointJoystickRight = m_Backhoe.FindAction("JointJoystickRight", throwIfNotFound: true);
+        m_Backhoe_BoomLightSwitchButton = m_Backhoe.FindAction("BoomLightSwitchButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +248,7 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Backhoe_RightCrawlerJoystickReverse;
     private readonly InputAction m_Backhoe_JointJoystickLeft;
     private readonly InputAction m_Backhoe_JointJoystickRight;
+    private readonly InputAction m_Backhoe_BoomLightSwitchButton;
     public struct BackhoeActions
     {
         private @OCSInput m_Wrapper;
@@ -237,6 +259,7 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
         public InputAction @RightCrawlerJoystickReverse => m_Wrapper.m_Backhoe_RightCrawlerJoystickReverse;
         public InputAction @JointJoystickLeft => m_Wrapper.m_Backhoe_JointJoystickLeft;
         public InputAction @JointJoystickRight => m_Wrapper.m_Backhoe_JointJoystickRight;
+        public InputAction @BoomLightSwitchButton => m_Wrapper.m_Backhoe_BoomLightSwitchButton;
         public InputActionMap Get() { return m_Wrapper.m_Backhoe; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +287,9 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
                 @JointJoystickRight.started -= m_Wrapper.m_BackhoeActionsCallbackInterface.OnJointJoystickRight;
                 @JointJoystickRight.performed -= m_Wrapper.m_BackhoeActionsCallbackInterface.OnJointJoystickRight;
                 @JointJoystickRight.canceled -= m_Wrapper.m_BackhoeActionsCallbackInterface.OnJointJoystickRight;
+                @BoomLightSwitchButton.started -= m_Wrapper.m_BackhoeActionsCallbackInterface.OnBoomLightSwitchButton;
+                @BoomLightSwitchButton.performed -= m_Wrapper.m_BackhoeActionsCallbackInterface.OnBoomLightSwitchButton;
+                @BoomLightSwitchButton.canceled -= m_Wrapper.m_BackhoeActionsCallbackInterface.OnBoomLightSwitchButton;
             }
             m_Wrapper.m_BackhoeActionsCallbackInterface = instance;
             if (instance != null)
@@ -286,6 +312,9 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
                 @JointJoystickRight.started += instance.OnJointJoystickRight;
                 @JointJoystickRight.performed += instance.OnJointJoystickRight;
                 @JointJoystickRight.canceled += instance.OnJointJoystickRight;
+                @BoomLightSwitchButton.started += instance.OnBoomLightSwitchButton;
+                @BoomLightSwitchButton.performed += instance.OnBoomLightSwitchButton;
+                @BoomLightSwitchButton.canceled += instance.OnBoomLightSwitchButton;
             }
         }
     }
@@ -298,5 +327,6 @@ public partial class @OCSInput : IInputActionCollection2, IDisposable
         void OnRightCrawlerJoystickReverse(InputAction.CallbackContext context);
         void OnJointJoystickLeft(InputAction.CallbackContext context);
         void OnJointJoystickRight(InputAction.CallbackContext context);
+        void OnBoomLightSwitchButton(InputAction.CallbackContext context);
     }
 }

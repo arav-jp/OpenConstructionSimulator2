@@ -319,6 +319,10 @@ PrefabInstance:
       propertyPath: _terrainManager
       value: 
       objectReference: {fileID: 1414852146}
+    - target: {fileID: 2438129385940461225, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _boomLight
+      value: 
+      objectReference: {fileID: 5527702169949116086}
     - target: {fileID: 5527702169474508560, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -369,3 +373,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+--- !u!114 &5527702169949116086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5527702170322550085, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+  m_PrefabInstance: {fileID: 5527702169949116085}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8e50ee94cbbe749bfa73d854935fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

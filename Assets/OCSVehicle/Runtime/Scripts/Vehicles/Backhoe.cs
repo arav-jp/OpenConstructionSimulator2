@@ -18,6 +18,8 @@ namespace OCS.Vehicle
         private RotationalJointModule _armJoint;
         [SerializeField]
         private RotationalJointModule _bucketJoint;
+        [SerializeField]
+        private LightModule _boomLight;
 
         public WheelModule leftCrawler { get => _leftCrawler; }
         public WheelModule rightCrawler { get => _rightCrawler; }
@@ -25,6 +27,7 @@ namespace OCS.Vehicle
         public RotationalJointModule boomJoint { get => _boomJoint; }
         public RotationalJointModule armJoint { get => _armJoint; }
         public RotationalJointModule bucketJoint { get => _bucketJoint; }
+        public LightModule boomLight { get => _boomLight; }
 
     }
 }

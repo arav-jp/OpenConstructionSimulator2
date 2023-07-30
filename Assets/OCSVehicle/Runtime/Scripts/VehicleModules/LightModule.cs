@@ -19,5 +19,10 @@ namespace OCS.Vehicle
         {
             _light_obj.SetActive(false);
         }
+
+        public void Switch()
+        {
+            _light_obj.SetActive(!_light_obj.activeSelf);
+        }
     }
 }

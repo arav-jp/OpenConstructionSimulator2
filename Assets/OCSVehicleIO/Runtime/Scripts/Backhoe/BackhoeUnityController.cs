@@ -23,6 +23,7 @@ namespace OCS.VehicleIO
         {
             _input.Backhoe.LeftCrawlerJoystickReverse.started += LeftCrawlerJoystickReverse;
             _input.Backhoe.RightCrawlerJoystickReverse.started += RightCrawlerJoystickReverse;
+            _input.Backhoe.BoomLightSwitchButton.started += SwitchBoomLight;
             _input.Enable();
         }
 
@@ -43,6 +44,11 @@ namespace OCS.VehicleIO
         private void RightCrawlerJoystickReverse(InputAction.CallbackContext context)
         {
             _rightCrawlerJoystickReverse = !_rightCrawlerJoystickReverse;
+        }
+
+        private void SwitchBoomLight(InputAction.CallbackContext context)
+        {
+            base.SwitchBoomLight();
         }
     }
 }
