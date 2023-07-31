@@ -5,12 +5,10 @@ using UnityEngine;
 
 namespace OCS.Vehicle
 {
-    public class LightModule : VehicleModule
+    public class LightModule : MonoBehaviour
     {
         [SerializeField]
         private GameObject _light_obj;
-
-        public override Type moduleType { get => typeof(LightModule); }
 
         public void On()
         {
@@ -20,6 +18,11 @@ namespace OCS.Vehicle
         public void Off()
         {
             _light_obj.SetActive(false);
+        }
+
+        public void Switch()
+        {
+            _light_obj.SetActive(!_light_obj.activeSelf);
         }
     }
 }

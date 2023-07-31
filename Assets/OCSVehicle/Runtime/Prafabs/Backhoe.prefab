@@ -311,7 +311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8e50ee94cbbe749bfa73d854935fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: BoomLight
   _light_obj: {fileID: 1974770536}
 --- !u!1 &403727081203192373
 GameObject:
@@ -986,7 +985,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740622734907517506}
-  m_LocalRotation: {x: -0.7158929, y: -0.00000013570904, z: -0.00000012908673, w: 0.6982102}
+  m_LocalRotation: {x: 0.7158936, y: -0, z: -0, w: -0.69820935}
   m_LocalPosition: {x: -0.00163652, y: 0.22165266, z: -0.37901437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1190,13 +1189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713a86d5f451a74fb84ebea91ae0281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: LeftCrawler
   _wheels:
   - {fileID: 5883781471897055891}
   - {fileID: 5883781471490567385}
   - {fileID: 5883781472738897260}
   - {fileID: 5883781471159990966}
-  _magnification: 100
 --- !u!1 &1878632392062126075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,7 +1966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: Bucket
   _joint: {fileID: 1944929877935996879}
 --- !u!1 &1944929877984468569
 GameObject:
@@ -2083,7 +2079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: Boom
   _joint: {fileID: 1944929877984468570}
 --- !u!1 &1944929877999457487
 GameObject:
@@ -2196,7 +2191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: Dozer
   _joint: {fileID: 1944929877999457481}
 --- !u!1 &1944929878077356189
 GameObject:
@@ -2311,7 +2305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: Arm
   _joint: {fileID: 1944929878077356191}
 --- !u!1 &1944929878258117446
 GameObject:
@@ -2323,8 +2316,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1944929878258117445}
   - component: {fileID: 1944929878258117447}
-  - component: {fileID: 1878632393143209739}
   - component: {fileID: 1944929878258117440}
+  - component: {fileID: 7882335175745699975}
   m_Layer: 7
   m_Name: Backhoe
   m_TagString: Machine
@@ -2401,19 +2394,6 @@ ArticulationBody:
   m_Immovable: 0
   m_UseGravity: 1
   m_CollisionDetectionMode: 0
---- !u!114 &1878632393143209739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944929878258117446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac783126d92e4cd48b30af123c586c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules: []
 --- !u!54 &1944929878258117440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2430,6 +2410,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7882335175745699975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944929878258117446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa2ca774873f5f46bbc721a15f68d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftCrawler: {fileID: 0}
+  _rightCrawler: {fileID: 0}
+  _bodyJoint: {fileID: 0}
+  _boomJoint: {fileID: 0}
+  _armJoint: {fileID: 0}
+  _bucketJoint: {fileID: 0}
 --- !u!1 &1944929878274433439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75c179ee993f7b46b05e266e9f8f4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: Body
   _joint: {fileID: 1944929878506332227}
 --- !u!114 &1292019973
 MonoBehaviour:
@@ -2622,7 +2619,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2561266548757361843}
-  m_LocalRotation: {x: 0.21996121, y: -0, z: -0, w: 0.97550863}
+  m_LocalRotation: {x: 0.21996132, y: -0, z: -0, w: 0.97550863}
   m_LocalPosition: {x: 0.00019259006, y: -0.19417492, z: 0.8837368}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2948,7 +2945,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3403494620837005198}
-  m_LocalRotation: {x: 0.13410309, y: -0, z: -0, w: 0.9909674}
+  m_LocalRotation: {x: 0.13410327, y: -0, z: -0, w: 0.9909674}
   m_LocalPosition: {x: -0.09480728, y: 0.61184967, z: 0.75979424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4214,13 +4211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713a86d5f451a74fb84ebea91ae0281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moduleName: RightCrawler
   _wheels:
   - {fileID: 5883781472744638288}
   - {fileID: 5883781471762466954}
   - {fileID: 5883781472451109018}
   - {fileID: 5883781472424290691}
-  _magnification: 100
 --- !u!1 &5883781472424290689
 GameObject:
   m_ObjectHideFlags: 0
