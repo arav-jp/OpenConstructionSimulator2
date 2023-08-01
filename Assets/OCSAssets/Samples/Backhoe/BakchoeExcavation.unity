@@ -371,6 +371,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackhoeSet
       objectReference: {fileID: 0}
+    - target: {fileID: 6218222852236212340, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _isLimited
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218222852279606961, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _isLimited
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218222852423064033, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _isLimited
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
 --- !u!114 &5527702169949116086 stripped
