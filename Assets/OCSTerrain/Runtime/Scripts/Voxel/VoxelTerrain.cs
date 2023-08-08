@@ -13,7 +13,7 @@ namespace OCS.Terrain
         private SoilManager _soilManager;
 
         [SerializeField]
-        private Excavator _excavator;
+        private Excavator[] _excavators;
         [SerializeField]
         private VoxelMap _voxelMap;
 
@@ -61,8 +61,13 @@ namespace OCS.Terrain
                 {
                     float height = _voxelMap.GetPillar(x, z).pillarHeight + mapData.origin.y;
                     Vector3 surface = _voxelMap.IndexToPosition(x, z) + Vector3.up * height;
-                    if (!_excavator.activeZone.IsPointInZone(surface)) continue;
-                    float height_cutting = _excavator.activeZone.GetSurfaceHeight(surface);
+                    float height_cutting = float.MaxValue;
+                    foreach(Excavator excavator in _excavators)
+                    {
+                        if (!excavator.activeZone.IsPointInZone(surface)) continue;
+                        float height_surface = excavator.activeZone.GetSurfaceHeight(surface);
+                        if (height_surface < height_cutting) height_cutting = height_surface;
+                    }
                     if (height_cutting > surface.y) continue;
                     int index_start = (int)((height - mapData.origin.y) / mapData.resolution);
                     int index_end = (int)((height_cutting - mapData.origin.y) / mapData.resolution);
