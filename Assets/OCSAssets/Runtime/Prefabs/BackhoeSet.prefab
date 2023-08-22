@@ -862,6 +862,14 @@ MonoBehaviour:
   _maxBoomInput: 30
   _maxArmInput: 30
   _maxBucketInput: 30
+  _leftCrawlerJoystick:
+    _resolution: 0.01
+  _rightCrawlerJoystick:
+    _resolution: 0.01
+  _jointJoystick_left:
+    _resolution: 0.01
+  _jointJoystick_right:
+    _resolution: 0.01
 --- !u!1001 &5527702170546185774
 PrefabInstance:
   m_ObjectHideFlags: 0

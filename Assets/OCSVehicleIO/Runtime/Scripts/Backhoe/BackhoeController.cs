@@ -21,9 +21,13 @@ namespace OCS.VehicleIO
         [SerializeField]
         private float _maxBucketInput = 1.0f;
 
+        [SerializeField]
         protected JoyStickInput _leftCrawlerJoystick;
+        [SerializeField]
         protected JoyStickInput _rightCrawlerJoystick;
+        [SerializeField]
         protected JoyStickInput _jointJoystick_left;
+        [SerializeField]
         protected JoyStickInput _jointJoystick_right;
 
         protected virtual void Update()

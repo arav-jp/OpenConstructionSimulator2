@@ -371,6 +371,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackhoeSet
       objectReference: {fileID: 0}
+    - target: {fileID: 5527702169949116087, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _jointJoystick_left._resolution
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527702169949116087, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _jointJoystick_right._resolution
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527702169949116087, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _leftCrawlerJoystick._resolution
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527702169949116087, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
+      propertyPath: _rightCrawlerJoystick._resolution
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6218222852236212340, guid: 58f944ccf8c109a42b3373116f7bea6b, type: 3}
       propertyPath: _isLimited
       value: 1
