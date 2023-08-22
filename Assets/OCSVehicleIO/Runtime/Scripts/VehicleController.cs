@@ -9,20 +9,35 @@ namespace OCS.VehicleIO
     [System.Serializable]
     public struct JoyStickInput
     {
-        [SerializeField]
+        [SerializeField, Range(0.01f, 1.0f)]
+        private float _resolution;
         private float _x;
-        [SerializeField]
         private float _y;
 
-        public float x { get => _x; set => _x = Mathf.Clamp(value, -1.0f, 1.0f); }
-        public float y { get => _y; set => _y = Mathf.Clamp(value, -1.0f, 1.0f); }
+        public float x
+        {
+            get => _x;
+            set
+            {
+                _x = (int)(Mathf.Clamp(value, -1.0f, 1.0f) / _resolution) * _resolution;
+            }
+        }
+
+        public float y
+        {
+            get => _y;
+            set
+            {
+                _y = (int)(Mathf.Clamp(value, -1.0f, 1.0f) / _resolution) * _resolution;
+            }
+        }
 
         public Vector2 vector { get => new Vector2(_x, _y); set => SetVector(value); }
 
         private void SetVector(Vector2 vec)
         {
-            _x = vec.x;
-            _y = vec.y;
+            x = vec.x;
+            y = vec.y;
         }
     }
 
